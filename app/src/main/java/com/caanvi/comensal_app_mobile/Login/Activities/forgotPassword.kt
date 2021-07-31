@@ -1,13 +1,13 @@
 package com.caanvi.comensal_app_mobile.Login.Activities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.restorePassword
 import com.caanvi.comensal_app_mobile.Login.SQLite.DatabaseHelper
 import com.caanvi.comensal_app_mobile.databinding.ActivityForgotPasswordBinding
-import com.caanvi.comensal_app_mobile.databinding.ActivityMainBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -51,6 +51,16 @@ class forgotPassword : AppCompatActivity() {
                     }
                 }
             })
+    }
+
+    //Funcion para regresar a la actividad anterior y que no se cierre la app presionando el boton hacia atras
+    override fun onBackPressed() {
+        super.onBackPressed()
+        //codigo adicional
+        val intent = Intent(applicationContext, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
     }
 
 }
