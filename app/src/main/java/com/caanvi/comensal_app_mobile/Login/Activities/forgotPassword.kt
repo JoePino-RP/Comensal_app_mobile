@@ -29,6 +29,14 @@ class forgotPassword : AppCompatActivity() {
             var email:String = binding.emailRestoreTxt.text.toString()
             restorePassword(email)
         }
+
+        binding.goInicio.setOnClickListener{
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+
     }
 
     fun restorePassword(email: String){

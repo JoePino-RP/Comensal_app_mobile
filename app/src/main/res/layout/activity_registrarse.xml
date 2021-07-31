@@ -96,7 +96,7 @@
         android:id="@+id/goLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Tienes una cuenta? LOGIN"
+        android:text="¿Tienes una cuenta? INICIAR SESIÓN"
         android:textSize="18dp"
         android:textStyle="bold"
         android:textColor="#68329b"
