@@ -2,20 +2,13 @@ package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.loginResponse
-import com.caanvi.comensal_app_mobile.Login.Modals.restorePassword
 import com.caanvi.comensal_app_mobile.Login.SQLite.DatabaseHelper
 import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
-import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityMainBinding
-import com.caanvi.comensal_app_mobile.databinding.ActivityProfileBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,16 +44,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+
+
     fun login(email: String, password:String){
 
-        RetrofitClient.instance.userLogin(email, password)
-            .enqueue(object: Callback<loginResponse> {
 
-                override fun onFailure(call: Call<loginResponse>, t: Throwable) {
+
+        RetrofitClient.instance.userLogin(email, password)
+            .enqueue(object: retrofit2.Callback<loginResponse> {
+
+                override fun onFailure(call: retrofit2.Call<loginResponse>, t: Throwable) {
                     Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
                 }
 
-                override fun onResponse(call: Call<loginResponse>, response: Response<loginResponse>) {
+                override fun onResponse(call: retrofit2.Call<loginResponse>, response: retrofit2.Response<loginResponse>) {
                     if(response.body()?.conecto!!){
                         usuarioData.idGeneral = response.body()?.user?.id!!
                         usuarioData.emailGeneral = response.body()?.user?.email!!
