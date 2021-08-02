@@ -16,13 +16,15 @@
         tools:replace="android:usesCleartextTraffic"
         tools:targetApi="n">
         <activity
-            android:name=".Login.Activities.Registrarse"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:name=".Login.Activities.PrincipalFragments"
             android:exported="true" />
-        <!--         <activity android:name=".RestaurantesActivity"></activity> -->
+        <activity
+            android:name=".Login.Activities.Registrarse"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" /> <!-- <activity android:name=".RestaurantesActivity"></activity> -->
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Login.Activities.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -34,10 +36,10 @@
         </activity>
         <activity
             android:name=".Login.Activities.forgotPassword"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Login.Activities.ProfileActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
 
 </manifest>

@@ -64,6 +64,7 @@
         android:layout_height="50dp"
         android:background="@drawable/sign"
         android:hint="Teléfono"
+        android:inputType="phone"
         android:paddingLeft="20dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"/>
@@ -74,6 +75,7 @@
         android:layout_height="50dp"
         android:background="@drawable/sign"
         android:hint="Email"
+        android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"/>
@@ -84,6 +86,7 @@
         android:layout_height="50dp"
         android:background="@drawable/sign"
         android:hint="Password"
+        android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"/>
