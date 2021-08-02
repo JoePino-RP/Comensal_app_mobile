@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/main_top"
     android:orientation="vertical"
     tools:context=".Login.Activities.Registrarse">
 
@@ -35,6 +36,7 @@
     <ImageView
         android:layout_width="110dp"
         android:layout_height="100dp"
+        android:background="@drawable/signup"
         android:layout_gravity="center"/>
 
     <EditText
@@ -95,6 +97,7 @@
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
+        android:background="@drawable/button"
         android:text="REGISTRARSE"
         android:textColor="#fff"/>
 
