@@ -66,9 +66,7 @@ class SettingsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.settings.setOnClickListener{
-            Toast.makeText(context, "Binvenido a la Configuración", Toast.LENGTH_SHORT).show()
-        }
+
     }
 
 }
