@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() {
             var email: String = binding.emailTxt.text.toString()
             var password:String = binding.passwordTxt.text.toString()
 
-            login(email.trim(), password.trim())
+            login(email.trim(), password)
         }
 
         binding.buttonForgot.setOnClickListener {
@@ -46,15 +46,11 @@ class MainActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
-
-
     }
 
 
 
     fun login(email: String, password:String){
-
-
 
         RetrofitClient.instance.userLogin(email, password)
             .enqueue(object: retrofit2.Callback<loginResponse> {

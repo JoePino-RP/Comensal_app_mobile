@@ -27,7 +27,7 @@ interface Api {
 
     @FormUrlEncoded
     @POST("LoginUsuario/registro.php")
-    fun useRegistro(
+    fun userRegistro(
         @Field ("nombre") nombre:String,
         @Field ("apellido") apellido:String,
         @Field ("contacto") contacto:String,
