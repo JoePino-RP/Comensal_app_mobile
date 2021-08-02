@@ -80,7 +80,9 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
 
                     }else{
-                        Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+
+                        //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, "Log In InCorrecto", Toast.LENGTH_LONG).show()
                     }
 
                 }

@@ -26,8 +26,57 @@ class Registrarse : AppCompatActivity() {
             finish()
         }
 
+        binding.btnRegistro.setOnClickListener {
+            //Obtener los datos de editText
+            var nombre: String = binding.nombreRe.toString()
+            var apellido: String = binding.apellidoRe.toString()
+            var telefono: String = binding.telefonoRe.toString()
+            var email: String = binding.emailRe.toString()
+            var password: String = binding.passwordRe.toString()
+
+            registrarse(nombre.trim(),apellido.trim(),telefono.trim(),email.trim(), password.trim())
+        }
+
+
+
+
 
     }
+
+
+
+
+
+    fun registrarse (nombre: String,apellido: String,telefono: String,
+                     email: String, password:String){
+
+
+
+
+
+/*
+
+        RetrofitClient.instance.useRegistro(nombre,apellido,telefono,email, password)
+            .enqueue(object: retrofit2.Callback<registro> {
+
+                override fun onFailure(call: retrofit2.Call<registro>, t: Throwable) {
+                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+                }
+
+                override fun onResponse(call: retrofit2.Call<registro>, response: retrofit2.Response<registro>) {
+
+
+                }
+
+
+            })
+
+            */
+
+    }
+
+
+
 
 
 

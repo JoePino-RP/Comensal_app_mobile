@@ -30,6 +30,7 @@ class forgotPassword : AppCompatActivity() {
             restorePassword(email)
         }
 
+        //boton regresar al principio
         binding.goInicio.setOnClickListener{
             val intent = Intent(applicationContext, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
