@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.caanvi.comensal_app_mobile.R
+import com.caanvi.comensal_app_mobile.databinding.FragmentLoginBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -29,6 +31,8 @@ class LoginFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
     }
+
+    private lateinit var binding: FragmentLoginBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,4 +61,14 @@ class LoginFragment : Fragment() {
                 }
             }
     }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.login.setOnClickListener{
+            Toast.makeText(context, "Binvenido al Login", Toast.LENGTH_SHORT).show()
+        }
+    }
+
 }
