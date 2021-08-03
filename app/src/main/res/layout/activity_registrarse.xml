@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/main_top"
     android:orientation="vertical"
     tools:context=".Login.Activities.Registrarse">
@@ -15,9 +16,10 @@
 
 
         <ImageView
-            android:layout_width="120dp"
-            android:layout_height="120dp"
-            android:paddingBottom="10dp"/>
+            android:layout_width="20dp"
+            android:layout_height="110dp"
+            android:paddingBottom="40dp"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,19 +27,34 @@
             android:layout_marginLeft="0dp"
             android:layout_marginTop="50dp"
             android:letterSpacing="0.03"
-            android:text="REGISTRARSE"
-            android:textColor="#68329b"
+            android:text="Registrarte"
+            android:textColor="#fc4444"
             android:textSize="30sp"
             android:textStyle="bold" />
 
 
+
+
     </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="0dp"
+        android:letterSpacing="0.03"
+        android:text="Regístrate con tu número de celular"
+        android:textColor="#000"
+        android:textSize="15sp"
+         />
 
     <ImageView
+        android:visibility="gone"
         android:layout_width="110dp"
         android:layout_height="100dp"
         android:background="@drawable/signup"
         android:layout_gravity="center"/>
+
+
 
     <EditText
         android:id="@+id/nombre_re"
@@ -45,6 +62,8 @@
         android:layout_height="50dp"
         android:background="@drawable/sign"
         android:hint="Nombre"
+        android:textColor="#000"
+        android:elevation="12dp"
         android:paddingLeft="20dp"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"/>
@@ -52,6 +71,7 @@
         android:id="@+id/apellido_re"
         android:layout_width="320dp"
         android:layout_height="50dp"
+        android:elevation="12dp"
         android:background="@drawable/sign"
         android:hint="Apellido"
         android:paddingLeft="20dp"
@@ -63,6 +83,8 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:background="@drawable/sign"
+
+        android:elevation="12dp"
         android:hint="Teléfono"
         android:inputType="phone"
         android:paddingLeft="20dp"
@@ -74,6 +96,7 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:background="@drawable/sign"
+        android:elevation="12dp"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:paddingLeft="20dp"
@@ -85,11 +108,45 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:background="@drawable/sign"
+        android:elevation="12dp"
         android:hint="Password"
         android:inputType="textPassword"
         android:paddingLeft="20dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"/>
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Acepto Políticas de"
+            android:textSize="15dp"
+            android:layout_marginLeft="27dp"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"/>
+        <TextView
+            android:id="@+id/goLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" tratamiento de datos"
+            android:textSize="15dp"
+            android:textStyle="bold"
+            android:textColor="#fc4444"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"/>
+
+        <CheckBox
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></CheckBox>
+
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btnRegistro"
@@ -98,18 +155,11 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:background="@drawable/button"
-        android:text="REGISTRARSE"
+        android:text="ENVIAR"
         android:textColor="#fff"/>
 
-    <TextView
-        android:id="@+id/goLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="¿Tienes una cuenta? INICIAR SESIÓN"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:textColor="#68329b"
-        android:layout_gravity="center"
-        android:layout_marginTop="18dp"/>
+
+    
+
 
 </LinearLayout>

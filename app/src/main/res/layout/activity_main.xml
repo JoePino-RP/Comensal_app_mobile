@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/main_top"
     android:orientation="vertical"
     tools:context=".Login.Activities.MainActivity">
@@ -13,27 +14,27 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="126dp"
-            android:layout_height="157dp"
+            android:layout_width="10dp"
+            android:layout_height="110dp"
             android:paddingBottom="10dp"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="LOGIN"
+            android:text="Bienvendido"
             android:textSize="30sp"
-            android:textColor="#68329b"
+            android:textColor="#fc4444"
             android:letterSpacing="0.03"
             android:textStyle="bold"
             android:layout_marginTop="50dp"
-            android:layout_marginLeft="50dp"/>
+            android:layout_marginLeft="30dp"/>
 
     </LinearLayout>
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="250dp"
-        android:background="@drawable/login"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+
         android:layout_gravity="center"/>
 
     <EditText
@@ -41,6 +42,7 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:background="@drawable/sign"
+        android:elevation="12dp"
         android:hint="Email"
         android:paddingLeft="20dp"
         android:layout_gravity="center"
@@ -51,6 +53,7 @@
         android:layout_width="320dp"
         android:layout_height="50dp"
         android:background="@drawable/sign"
+        android:elevation="12dp"
         android:hint="Password"
         android:paddingLeft="20dp"
         android:layout_gravity="center"
@@ -60,10 +63,10 @@
         android:id="@+id/buttonForgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="¿Olvidaste Tu Contraseña?"
-        android:textStyle="bold"
+        android:text="Olvidé mi Contraseña"
+        android:textStyle="italic"
         android:textSize="18dp"
-        android:textColor="#68329b"
+        android:textColor="#000"
         android:layout_gravity="end"
         android:layout_marginTop="10dp"
         android:layout_marginRight="50dp"/>
@@ -74,20 +77,82 @@
         android:layout_height="55dp"
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
-        android:text="Login"
+        android:text="Entrar"
         android:background="@drawable/button"
         android:textColor="#fff"/>
 
     <TextView
-        android:id="@+id/goRegistro"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="¿No tiene Cuenta? Regístrarse"
-        android:textSize="18dp"
+        android:text="o ingresar con"
+        android:textAlignment="center"
+        android:textSize="16dp"
+        android:layout_marginTop="22dp"
+        android:textColor="#000"></TextView>
 
-        android:textStyle="bold"
-        android:textColor="#68329b"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <Button
+            android:id="@+id/gmail"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="25dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+
+            android:background="@drawable/gmail"
+            android:textColor="#fff"/>
+        <Button
+            android:id="@+id/facebook"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_marginLeft="80dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="1dp"
+
+            android:background="@drawable/facebook"
+            android:textColor="#fff"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No tengo una Cuenta, "
+            android:textSize="18dp"
+            android:layout_marginLeft="35dp"
+            android:textColor="#000"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"/>
+
+        <TextView
+            android:id="@+id/goRegistro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="registrarme "
+            android:textStyle="bold"
+            android:textSize="18dp"
+            android:textColor="#fc4444"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"/>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
