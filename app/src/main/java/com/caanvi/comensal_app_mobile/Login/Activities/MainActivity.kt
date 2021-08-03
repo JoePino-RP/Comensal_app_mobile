@@ -103,4 +103,14 @@ class MainActivity : AppCompatActivity() {
     fun insertarSQLite(id:String, email: String){
         handler.insertDB(id, email)
     }
+
+    //Funcion para regresar a la actividad anterior y que no se cierre la app presionando el boton hacia atras
+    override fun onBackPressed() {
+        super.onBackPressed()
+        //codigo adicional
+        val intent = Intent(applicationContext, MenuActi::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
 }

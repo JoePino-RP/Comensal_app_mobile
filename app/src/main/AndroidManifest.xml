@@ -16,12 +16,25 @@
         tools:replace="android:usesCleartextTraffic"
         tools:targetApi="n">
         <activity
-            android:name=".Login.Activities.MenuActividades"
+            android:name=".Login.Activities.Ajustes"
             android:exported="true" />
+        <activity
+            android:name=".Login.Activities.VerRestaurantes"
+            android:exported="true" />
+        <activity
+            android:name=".Login.Activities.MenuActi"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".Login.Activities.PrincipalFragments"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Login.Activities.Registrarse"
             android:exported="true"
@@ -32,11 +45,14 @@
         <activity
             android:name=".Login.Activities.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+            <!--
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            -->
         </activity>
         <activity
             android:name=".Login.Activities.forgotPassword"
