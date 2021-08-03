@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    // light colors
+    //four bg card color
+
+    <color name="trans_green">#7525D366</color>
+    <color name="trans_yellow">#75FFD337</color>
+    <color name="trans_violet">#75082DEF</color>
+    <color name="trans_skyblue">#7508EFE1</color>
+    <color name="trans_red">#75CC0000</color>
+    <color name="trans_turq">#75FF5722</color>
 </resources>
