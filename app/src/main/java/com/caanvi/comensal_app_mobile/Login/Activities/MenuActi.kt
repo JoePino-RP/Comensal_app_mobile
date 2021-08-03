@@ -15,7 +15,7 @@ class MenuActi : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_registrarse)
+        setContentView(R.layout.activity_menuacti)
 
         binding = ActivityMenuactiBinding.inflate(layoutInflater)
         setContentView(binding.root)
