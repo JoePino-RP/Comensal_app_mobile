@@ -38,6 +38,14 @@ class MenuActi : AppCompatActivity() {
             finish()
         }
 
+        //Cambiar de Vista Buscar Restaurantes
+        binding.btnBuscar.setOnClickListener {
+            val intent = Intent(applicationContext, searchRestaurant::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+
         //Cambiar de Vista de un activitie a otro
         binding.btnAjustes.setOnClickListener {
             val intent = Intent(applicationContext, Ajustes::class.java)

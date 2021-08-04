@@ -59,4 +59,7 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.14.6'
     implementation 'com.android.volley:volley:1.1.1'
 
+    //Imagenes
+    implementation "com.squareup.picasso:picasso:2.71828"
+
 }

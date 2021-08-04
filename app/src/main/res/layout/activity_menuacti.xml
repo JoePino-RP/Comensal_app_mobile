@@ -61,6 +61,17 @@
         android:text="VER RESTAURANTES"
         android:textColor="#fff"/>
 
+
+    <Button
+        android:id="@+id/btnBuscar"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button"
+        android:text="BUSCAR RESTAURANTE"
+        android:textColor="#fff"/>
+
     <Button
         android:id="@+id/btnAjustes"
         android:layout_width="320dp"

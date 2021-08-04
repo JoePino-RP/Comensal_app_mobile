@@ -1,36 +1,39 @@
 package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
-import com.caanvi.comensal_app_mobile.databinding.ActivityVerRestaurantesBinding
+import com.caanvi.comensal_app_mobile.Login.RecyclerView.SearchRestaurant.SearchRestaurantAdapter
+import com.caanvi.comensal_app_mobile.databinding.ActivitySearchRestaurantBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class VerRestaurantes : AppCompatActivity() {
+class searchRestaurant : AppCompatActivity(), SearchView.OnQueryTextListener {
 
-    private lateinit var binding : ActivityVerRestaurantesBinding
-    private lateinit var adapter: RestaurantAdapter
+    private lateinit var binding: ActivitySearchRestaurantBinding
+
+    private lateinit var adapter: SearchRestaurantAdapter
     val restaurantList = mutableListOf<Restaurant>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityVerRestaurantesBinding.inflate(layoutInflater)
+        binding = ActivitySearchRestaurantBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getRestaurant()
+        binding.searchWord.setOnQueryTextListener(this)
+        //searchRestaurantByName()
         initRecyclerRestaurant()
     }
 
-    //Funcion para regresar a la actividad anterior y que no se cierre la app presionando el boton hacia atras
     override fun onBackPressed() {
         super.onBackPressed()
         //codigo adicional
@@ -41,22 +44,22 @@ class VerRestaurantes : AppCompatActivity() {
     }
 
     fun initRecyclerRestaurant(){
-         binding.recyclerRestaurant.layoutManager = LinearLayoutManager(applicationContext)
-         adapter = RestaurantAdapter(restaurantList)
-         binding.recyclerRestaurant.adapter = adapter
+        binding.recyclerSearchRestaurant.layoutManager = LinearLayoutManager(applicationContext)
+        adapter = SearchRestaurantAdapter(restaurantList)
+        binding.recyclerSearchRestaurant.adapter = adapter
     }
 
+    fun searchRestaurantByName(query: String){
+        //var sto:String = "Pampa"
 
+        RetrofitClient.instance.searchRestaurant(query)
+            .enqueue(object: retrofit2.Callback<RestaurantResponse> {
 
-    fun getRestaurant(){
-        RetrofitClient.instance.getRestaurant()
-            .enqueue(object: Callback<RestaurantResponse> {
-
-                override fun onFailure(call: Call<RestaurantResponse>, t: Throwable) {
+                override fun onFailure(call: retrofit2.Call<RestaurantResponse>, t: Throwable) {
                     Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
                 }
 
-                override fun onResponse(call: Call<RestaurantResponse>, response: Response<RestaurantResponse>) {
+                override fun onResponse(call: retrofit2.Call<RestaurantResponse>, response: retrofit2.Response<RestaurantResponse>) {
 
                     if(response.body()?.conecto!!){
 
@@ -73,6 +76,18 @@ class VerRestaurantes : AppCompatActivity() {
                     }
                 }
             })
+    }
+
+
+    override fun onQueryTextSubmit(query: String?): Boolean {
+        if(!query.isNullOrEmpty()){
+            searchRestaurantByName(query)
+        }
+        return true
+    }
+
+    override fun onQueryTextChange(newText: String?): Boolean {
+        return true
     }
 
 }

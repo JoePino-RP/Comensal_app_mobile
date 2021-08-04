@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/prefabRes"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_marginTop="35dp">
+
+    <ImageView
+        android:id="@+id/imgRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+    </ImageView>
+    <TextView
+        android:id="@+id/txtNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Nombre"/>
+
+    <TextView
+        android:id="@+id/txtPrecio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Precio"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtNombre"/>
+    <TextView
+        android:id="@+id/txtDireccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Direccion"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtPrecio"/>
+
+    <TextView
+        android:id="@+id/txtTelefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="Telefono"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/txtDireccion"/>
+
+</RelativeLayout>
