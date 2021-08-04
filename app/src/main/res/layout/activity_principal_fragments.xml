@@ -30,8 +30,21 @@
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
             android:background="#fc4444"
-            android:padding="15dp"
+            android:padding="10dp"
             android:src="@drawable/ic_home_black_"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/notiBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_marginStart="52dp"
+            android:background="#fc4444"
+            android:padding="10dp"
+            android:src="@drawable/ic_notifications_blck"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -41,10 +54,10 @@
             android:id="@+id/searchBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:layout_marginStart="52dp"
             android:background="#fc4444"
-            android:padding="15dp"
+            android:padding="10dp"
             android:src="@drawable/ic_search_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -58,9 +71,9 @@
             android:id="@+id/addBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             android:background="#fc4444"
-            android:padding="15dp"
+            android:padding="10dp"
             android:src="@drawable/ic_add_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -68,18 +81,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <ImageButton
-            android:id="@+id/notiBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_marginStart="52dp"
-            android:background="#fc4444"
-            android:padding="15dp"
-            android:src="@drawable/ic_notifications_blck"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+
 
 
         <ImageButton

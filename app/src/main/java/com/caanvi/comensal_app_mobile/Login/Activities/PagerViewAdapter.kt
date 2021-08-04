@@ -12,13 +12,16 @@ internal class PagerViewAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm!
                 HomeFragment()
             }
             1 -> {
-                SearchFragment()
+                //3SearchFragment()
+                NotificationFragment()
             }
             2 -> {
-                AddFragment()
+                //4AddFragment()
+                SearchFragment()
             }
             3 -> {
-                NotificationFragment()
+                //2NotificationFragment()
+                AddFragment()
             }
             4 -> {
                 ProfileFragment()
