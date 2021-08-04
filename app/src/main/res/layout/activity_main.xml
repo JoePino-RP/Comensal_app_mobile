@@ -21,11 +21,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bienvendido"
+            android:text="Bienvenido"
+            android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="#fc4444"
             android:letterSpacing="0.03"
-            android:textStyle="bold"
+            android:fontFamily="@font/avenirltstd"
+
             android:layout_marginTop="50dp"
             android:layout_marginLeft="30dp"/>
 
@@ -45,6 +47,8 @@
         android:elevation="12dp"
         android:hint="Email"
         android:paddingLeft="20dp"
+        android:fontFamily="@font/roman"
+
         android:layout_gravity="center"
         android:layout_marginTop="20dp"/>
 
@@ -57,6 +61,8 @@
         android:hint="Password"
         android:paddingLeft="20dp"
         android:layout_gravity="center"
+        android:fontFamily="@font/roman"
+
         android:layout_marginTop="10dp"/>
 
     <TextView
@@ -64,7 +70,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Olvidé mi Contraseña"
-        android:textStyle="italic"
+        android:fontFamily="@font/roman"
         android:textSize="18dp"
         android:textColor="#000"
         android:layout_gravity="end"
@@ -78,6 +84,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:text="Entrar"
+        android:fontFamily="@font/avenirltstd"
+        android:textStyle="bold"
         android:background="@drawable/button"
         android:textColor="#fff"/>
 
@@ -87,6 +95,8 @@
         android:text="o ingresar con"
         android:textAlignment="center"
         android:textSize="16dp"
+        android:fontFamily="@font/roman"
+
         android:layout_marginTop="22dp"
         android:textColor="#000"></TextView>
 
@@ -135,6 +145,8 @@
             android:layout_height="wrap_content"
             android:text="No tengo una Cuenta, "
             android:textSize="18dp"
+            android:fontFamily="@font/roman"
+
             android:layout_marginLeft="35dp"
             android:textColor="#000"
             android:layout_gravity="center"
@@ -147,6 +159,8 @@
             android:text="registrarme "
             android:textStyle="bold"
             android:textSize="18dp"
+            android:fontFamily="@font/roman"
+
             android:textColor="#fc4444"
             android:layout_gravity="center"
             android:layout_marginTop="3dp"/>
