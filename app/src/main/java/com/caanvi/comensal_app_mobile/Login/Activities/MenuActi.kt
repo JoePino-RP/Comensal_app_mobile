@@ -47,13 +47,20 @@ class MenuActi : AppCompatActivity() {
         }
 
         //Cambiar de Vista de un activitie a otro
+        binding.btnGustos.setOnClickListener {
+            val intent = Intent(applicationContext, GustosComensal::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+
+        //Cambiar de Vista de un activitie a otro
         binding.btnFragments.setOnClickListener {
             val intent = Intent(applicationContext, PrincipalFragments::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             finish()
         }
-
 
     }
 
