@@ -46,6 +46,14 @@ class MenuActi : AppCompatActivity() {
             finish()
         }
 
+        //Cambiar de Vista de un activitie a otro
+        binding.btnFragments.setOnClickListener {
+            val intent = Intent(applicationContext, PrincipalFragments::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+
 
     }
 

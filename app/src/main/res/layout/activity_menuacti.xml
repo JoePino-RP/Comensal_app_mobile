@@ -73,4 +73,18 @@
 
 
 
+    <!--BOTón de fragments-->
+    <Button
+        android:visibility="gone"
+        android:id="@+id/btnFragments"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button"
+        android:text="DAHBOARD Fragment"
+        android:textColor="#fff"/>
+
+
+
 </LinearLayout>

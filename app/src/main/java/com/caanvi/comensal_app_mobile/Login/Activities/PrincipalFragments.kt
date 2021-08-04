@@ -1,20 +1,22 @@
 package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
-import com.caanvi.comensal_app_mobile.Login.fragments.DashboardFragment
-import com.caanvi.comensal_app_mobile.Login.fragments.LoginFragment
-import com.caanvi.comensal_app_mobile.Login.fragments.SettingsFragment
+import androidx.viewpager.widget.ViewPager
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityPrincipalFragmentsBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class PrincipalFragments : AppCompatActivity() {
 
-    private val dashboardFragment = DashboardFragment()
-    private val loginFragment = LoginFragment()
-    private val settingsFragment = SettingsFragment()
+    private lateinit var homeBtn: ImageButton
+    private lateinit var addBtn: ImageButton
+    private lateinit var notiBtn: ImageButton
+    private lateinit var searchBtn: ImageButton
+    private lateinit var profileBtn: ImageButton
+
+    private lateinit var mViewPager: ViewPager
+    private lateinit var mPagerViewAdapter: PagerViewAdapter
 
     private lateinit var binding: ActivityPrincipalFragmentsBinding
 
@@ -22,23 +24,72 @@ class PrincipalFragments : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal_fragments)
 
-        val bottom_nav : BottomNavigationView = findViewById(R.id.bottom_navigation)
+        // init views
+        mViewPager = findViewById(R.id.mViewPager)
+        homeBtn = findViewById(R.id.homeBtn)
+        addBtn = findViewById(R.id.addBtn)
+        profileBtn = findViewById(R.id.profileBtn)
+        searchBtn = findViewById(R.id.searchBtn)
+        notiBtn = findViewById(R.id.notiBtn)
 
 
+        //onclick listner
 
-        replaceFragment(dashboardFragment)
+        homeBtn.setOnClickListener {
+            mViewPager.currentItem = 0
 
-
-
-        bottom_nav.setOnNavigationItemReselectedListener {
-            when (it.itemId){
-                R.id.ic_dashboard -> replaceFragment(dashboardFragment)
-                R.id.ic_settings -> replaceFragment(settingsFragment)
-                R.id.ic_info -> replaceFragment(loginFragment)
-
-            }
-            true
         }
+
+        searchBtn.setOnClickListener {
+
+            mViewPager.currentItem = 1
+
+        }
+
+        addBtn.setOnClickListener {
+            mViewPager.currentItem = 2
+
+        }
+
+        notiBtn.setOnClickListener {
+            mViewPager.currentItem = 3
+
+        }
+
+        profileBtn.setOnClickListener {
+            mViewPager.currentItem = 4
+
+        }
+
+
+
+
+        mPagerViewAdapter = PagerViewAdapter(supportFragmentManager)
+        mViewPager.adapter = mPagerViewAdapter
+        mViewPager.offscreenPageLimit = 5
+
+
+
+        mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                changeTabs(position)
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
+
+
+
+
+        mViewPager.currentItem = 0
+        homeBtn.setImageResource(R.drawable.ic_home_pink)
 
 
 
@@ -46,12 +97,57 @@ class PrincipalFragments : AppCompatActivity() {
 
     }
 
+    private fun changeTabs(position: Int) {
 
-    private fun replaceFragment(fragment: Fragment){
-        if (fragment !=null){
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, fragment)
-            transaction.commit()
+
+        if (position == 0) {
+            homeBtn.setImageResource(R.drawable.ic_home_pink)
+            searchBtn.setImageResource(R.drawable.ic_search_black)
+            addBtn.setImageResource(R.drawable.ic_add_black)
+            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
+            profileBtn.setImageResource(R.drawable.ic_person_outline_)
+
+
+
+
         }
+        if (position == 1) {
+            homeBtn.setImageResource(R.drawable.ic_home_black_)
+            searchBtn.setImageResource(R.drawable.ic_search_pink)
+            addBtn.setImageResource(R.drawable.ic_add_black)
+            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
+            profileBtn.setImageResource(R.drawable.ic_person_outline_)
+
+
+
+
+        }
+        if (position == 2) {
+            homeBtn.setImageResource(R.drawable.ic_home_black_)
+            searchBtn.setImageResource(R.drawable.ic_search_black)
+            addBtn.setImageResource(R.drawable.ic_add_pink)
+            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
+            profileBtn.setImageResource(R.drawable.ic_person_outline_)
+
+        }
+        if (position == 3) {
+            homeBtn.setImageResource(R.drawable.ic_home_black_)
+            searchBtn.setImageResource(R.drawable.ic_search_black)
+            addBtn.setImageResource(R.drawable.ic_add_black)
+            notiBtn.setImageResource(R.drawable.ic_notifications_fill)
+            profileBtn.setImageResource(R.drawable.ic_person_outline_)
+
+        }
+        if (position == 4) {
+            homeBtn.setImageResource(R.drawable.ic_home_black_)
+            searchBtn.setImageResource(R.drawable.ic_search_black)
+            addBtn.setImageResource(R.drawable.ic_add_black)
+            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
+            profileBtn.setImageResource(R.drawable.ic_person_pink_fill)
+
+        }
+
+
+
     }
 }
