@@ -122,11 +122,16 @@
 
         <Button
             android:id="@+id/gmail"
-            android:layout_width="70dp"
+            android:layout_width="80dp"
             android:layout_height="70dp"
             android:layout_marginLeft="25dp"
             android:layout_gravity="center"
             android:layout_marginTop="1dp"
+
+            android:bottomLeftRadius="10dip"
+            android:bottomRightRadius="10dip"
+            android:topLeftRadius="20dip"
+            android:topRightRadius="20dip"
 
             android:background="@drawable/ic_gmail"
             android:textColor="#fff"/>
@@ -137,6 +142,11 @@
             android:layout_marginLeft="80dp"
             android:layout_gravity="center"
             android:layout_marginTop="1dp"
+
+            android:bottomLeftRadius="10dip"
+            android:bottomRightRadius="10dip"
+            android:topLeftRadius="20dip"
+            android:topRightRadius="20dip"
 
             android:background="@drawable/ic_facebook"
             android:textColor="#fff"/>
@@ -163,7 +173,7 @@
             android:layout_marginLeft="35dp"
             android:textColor="#000"
             android:layout_gravity="center"
-            android:layout_marginTop="3dp"/>
+            android:layout_marginTop="2dp"/>
 
         <TextView
             android:id="@+id/goRegistro"
@@ -177,7 +187,7 @@
 
             android:textColor="#fc4444"
             android:layout_gravity="center"
-            android:layout_marginTop="3dp"/>
+            android:layout_marginTop="2dp"/>
 
     </LinearLayout>
 
