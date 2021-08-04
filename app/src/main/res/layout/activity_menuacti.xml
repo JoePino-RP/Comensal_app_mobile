@@ -75,7 +75,7 @@
 
     <!--BOTón de fragments-->
     <Button
-        android:visibility="visible"
+        android:visibility="gone"
         android:id="@+id/btnFragments"
         android:layout_width="320dp"
         android:layout_height="55dp"
