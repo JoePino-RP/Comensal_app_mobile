@@ -7,16 +7,30 @@
     android:background="@drawable/main_top"
     android:orientation="vertical"
     tools:context=".Login.Activities.MainActivity">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="COMENSALES"
+        android:textSize="30sp"
+        android:textColor="#707070"
+
+        android:fontFamily="@font/avenirltstd"
+
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="40dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
+
         <ImageView
             android:layout_width="10dp"
             android:layout_height="110dp"
             android:paddingBottom="10dp"/>
+
+
 
         <TextView
             android:layout_width="wrap_content"
@@ -25,7 +39,6 @@
             android:textStyle="bold"
             android:textSize="30sp"
             android:textColor="#fc4444"
-            android:letterSpacing="0.03"
             android:fontFamily="@font/avenirltstd"
 
             android:layout_marginTop="50dp"
@@ -115,7 +128,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="1dp"
 
-            android:background="@drawable/gmail"
+            android:background="@drawable/ic_gmail"
             android:textColor="#fff"/>
         <Button
             android:id="@+id/facebook"
@@ -125,7 +138,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="1dp"
 
-            android:background="@drawable/facebook"
+            android:background="@drawable/ic_facebook"
             android:textColor="#fff"/>
 
 
@@ -157,9 +170,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="registrarme "
-            android:textStyle="bold"
+
             android:textSize="18dp"
-            android:fontFamily="@font/roman"
+            android:fontFamily="@font/avenirltstd"
+            android:textStyle=""
 
             android:textColor="#fc4444"
             android:layout_gravity="center"
