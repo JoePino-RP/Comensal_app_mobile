@@ -21,15 +21,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Bienvendido"
-            android:textSize="30sp"
-            android:textColor="#fc4444"
+            android:layout_marginLeft="21dp"
+            android:layout_marginTop="45dp"
             android:letterSpacing="0.03"
-            android:textStyle="bold"
-            android:layout_marginTop="50dp"
-            android:layout_marginLeft="30dp"/>
+            android:text="COMENSALES"
+            android:textColor="#707070"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="0dp"
+        android:letterSpacing="0.03"
+        android:text="Bienvendido"
+        android:textColor="@color/red"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:layout_width="0dp"
@@ -39,25 +51,25 @@
 
     <EditText
         android:id="@+id/emailTxt"
-        android:layout_width="320dp"
+        android:layout_width="376dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp"
         android:background="@drawable/sign"
         android:elevation="12dp"
         android:hint="Email"
-        android:paddingLeft="20dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"/>
+        android:paddingLeft="20dp" />
 
     <EditText
         android:id="@+id/passwordTxt"
-        android:layout_width="320dp"
+        android:layout_width="376dp"
         android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
         android:background="@drawable/sign"
         android:elevation="12dp"
         android:hint="Password"
-        android:paddingLeft="20dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        android:paddingLeft="20dp" />
 
     <TextView
         android:id="@+id/buttonForgot"
@@ -65,21 +77,21 @@
         android:layout_height="wrap_content"
         android:text="Olvidé mi Contraseña"
         android:textStyle="italic"
-        android:textSize="18dp"
+        android:textSize="17dp"
         android:textColor="#000"
         android:layout_gravity="end"
         android:layout_marginTop="10dp"
-        android:layout_marginRight="50dp"/>
+        android:layout_marginRight="22dp"/>
 
     <Button
         android:id="@+id/buttonLogin"
-        android:layout_width="320dp"
+        android:layout_width="376dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
-        android:layout_marginTop="15dp"
-        android:text="Entrar"
+        android:layout_marginTop="28dp"
         android:background="@drawable/button"
-        android:textColor="#fff"/>
+        android:text="Entrar"
+        android:textColor="#fff" />
 
     <TextView
         android:layout_width="match_parent"
@@ -87,7 +99,7 @@
         android:text="o ingresar con"
         android:textAlignment="center"
         android:textSize="16dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="28dp"
         android:textColor="#000"></TextView>
 
     <LinearLayout
@@ -99,24 +111,26 @@
 
         <Button
             android:id="@+id/gmail"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="25dp"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="1dp"
 
+
             android:background="@drawable/gmail"
-            android:textColor="#fff"/>
+            android:textColor="#fff" />
+
         <Button
             android:id="@+id/facebook"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="80dp"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
+            android:layout_marginLeft="80dp"
             android:layout_marginTop="1dp"
 
             android:background="@drawable/facebook"
-            android:textColor="#fff"/>
+            android:textColor="#fff" />
 
 
 
@@ -147,7 +161,7 @@
             android:text="registrarme "
             android:textStyle="bold"
             android:textSize="18dp"
-            android:textColor="#fc4444"
+            android:textColor="@color/red"
             android:layout_gravity="center"
             android:layout_marginTop="3dp"/>
 
