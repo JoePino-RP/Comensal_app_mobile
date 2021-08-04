@@ -39,22 +39,23 @@ class PrincipalFragments : AppCompatActivity() {
             mViewPager.currentItem = 0
 
         }
-
-        searchBtn.setOnClickListener {
-
+        notiBtn.setOnClickListener {
             mViewPager.currentItem = 1
 
         }
 
-        addBtn.setOnClickListener {
+        searchBtn.setOnClickListener {
+
             mViewPager.currentItem = 2
 
         }
 
-        notiBtn.setOnClickListener {
+        addBtn.setOnClickListener {
             mViewPager.currentItem = 3
 
         }
+
+
 
         profileBtn.setOnClickListener {
             mViewPager.currentItem = 4
@@ -102,47 +103,55 @@ class PrincipalFragments : AppCompatActivity() {
 
         if (position == 0) {
             homeBtn.setImageResource(R.drawable.ic_home_pink)
+            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
             searchBtn.setImageResource(R.drawable.ic_search_black)
             addBtn.setImageResource(R.drawable.ic_add_black)
-            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
+
             profileBtn.setImageResource(R.drawable.ic_person_outline_)
 
 
 
 
         }
+
         if (position == 1) {
             homeBtn.setImageResource(R.drawable.ic_home_black_)
-            searchBtn.setImageResource(R.drawable.ic_search_pink)
+            notiBtn.setImageResource(R.drawable.ic_notifications_fill)
+            searchBtn.setImageResource(R.drawable.ic_search_black)
             addBtn.setImageResource(R.drawable.ic_add_black)
-            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
+
             profileBtn.setImageResource(R.drawable.ic_person_outline_)
-
-
-
 
         }
+
         if (position == 2) {
             homeBtn.setImageResource(R.drawable.ic_home_black_)
-            searchBtn.setImageResource(R.drawable.ic_search_black)
-            addBtn.setImageResource(R.drawable.ic_add_pink)
             notiBtn.setImageResource(R.drawable.ic_notifications_blck)
+            searchBtn.setImageResource(R.drawable.ic_search_pink)
+            addBtn.setImageResource(R.drawable.ic_add_black)
+
             profileBtn.setImageResource(R.drawable.ic_person_outline_)
+
+
+
 
         }
         if (position == 3) {
             homeBtn.setImageResource(R.drawable.ic_home_black_)
+            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
             searchBtn.setImageResource(R.drawable.ic_search_black)
-            addBtn.setImageResource(R.drawable.ic_add_black)
-            notiBtn.setImageResource(R.drawable.ic_notifications_fill)
+            addBtn.setImageResource(R.drawable.ic_add_pink)
+
             profileBtn.setImageResource(R.drawable.ic_person_outline_)
 
         }
+
         if (position == 4) {
             homeBtn.setImageResource(R.drawable.ic_home_black_)
+            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
             searchBtn.setImageResource(R.drawable.ic_search_black)
             addBtn.setImageResource(R.drawable.ic_add_black)
-            notiBtn.setImageResource(R.drawable.ic_notifications_blck)
+
             profileBtn.setImageResource(R.drawable.ic_person_pink_fill)
 
         }

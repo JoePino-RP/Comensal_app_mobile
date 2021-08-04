@@ -28,9 +28,10 @@
             android:layout_marginTop="50dp"
             android:letterSpacing="0.03"
             android:text="Registrarte"
+            android:fontFamily="@font/avenirltstd"
             android:textColor="#fc4444"
             android:textSize="30sp"
-            android:textStyle="bold" />
+             />
 
 
 
@@ -44,6 +45,7 @@
         android:letterSpacing="0.03"
         android:text="Regístrate con tu número de celular"
         android:textColor="#000"
+        android:fontFamily="@font/roman"
         android:textSize="15sp"
          />
 
@@ -126,6 +128,7 @@
             android:layout_height="wrap_content"
             android:text="Acepto Políticas de"
             android:textSize="15dp"
+            android:fontFamily="@font/roman"
             android:layout_marginLeft="27dp"
             android:textColor="#000"
             android:layout_gravity="center"
@@ -136,7 +139,7 @@
             android:layout_height="wrap_content"
             android:text=" tratamiento de datos"
             android:textSize="15dp"
-            android:textStyle="bold"
+            android:fontFamily="@font/avenirltstd"
             android:textColor="#fc4444"
             android:layout_gravity="center"
             android:layout_marginTop="1dp"/>
@@ -155,6 +158,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="15dp"
         android:background="@drawable/button"
+        android:fontFamily="@font/roman"
         android:text="ENVIAR"
         android:textColor="#fff"/>
 

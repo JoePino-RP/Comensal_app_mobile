@@ -26,6 +26,8 @@
             android:layout_marginTop="50dp"
             android:letterSpacing="0.03"
             android:text="MENÚ ACTIVIDADES"
+            android:fontFamily="@font/avenirltstd"
+
             android:textColor="#68329b"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -49,6 +51,8 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/button"
         android:text="INICIAR SESIÓN"
+        android:fontFamily="@font/avenirltstd"
+        android:textStyle="bold"
         android:textColor="#fff"/>
 
     <Button
@@ -59,6 +63,8 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/button"
         android:text="VER RESTAURANTES"
+        android:fontFamily="@font/avenirltstd"
+        android:textStyle="bold"
         android:textColor="#fff"/>
 
 
@@ -80,6 +86,8 @@
         android:layout_marginTop="15dp"
         android:background="@drawable/button"
         android:text="AJUSTES"
+        android:fontFamily="@font/avenirltstd"
+        android:textStyle="bold"
         android:textColor="#fff"/>
 
 
