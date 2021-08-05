@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:usesCleartextTraffic"
         tools:targetApi="n">
-        <activity android:name=".Login.Activities.GustosComensal"></activity>
+
         <activity android:name=".Login.Activities.searchRestaurant" />
         <activity
             android:name=".Login.Activities.SplahActivity"
@@ -27,6 +27,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Login.Activities.GustosComensal"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Login.Activities.Ajustes"
             android:exported="true" />
