@@ -15,7 +15,8 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:usesCleartextTraffic"
         tools:targetApi="n">
-        <activity android:name=".Login.Activities.searchRestaurant"></activity>
+        <activity android:name=".Login.Activities.GustosComensal"></activity>
+        <activity android:name=".Login.Activities.searchRestaurant" />
         <activity
             android:name=".Login.Activities.SplahActivity"
             android:exported="true"
@@ -35,11 +36,11 @@
         <activity
             android:name=".Login.Activities.MenuActi"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Login.Activities.PrincipalFragments"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Login.Activities.Registrarse"
             android:exported="true"
