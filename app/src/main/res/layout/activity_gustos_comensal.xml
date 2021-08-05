@@ -49,7 +49,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="8dp"
         android:text="Hamburguesa" />
 
     <CheckBox
@@ -85,8 +85,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="8dp"
         android:text="Gaseosa"/>
+
+    <CheckBox
+        android:id="@+id/checkBox8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="0dp"
+        android:text="Vino"/>
 
     <CheckBox
         android:id="@+id/checkBox7"
@@ -94,7 +102,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
         android:layout_marginTop="0dp"
-        android:text="Vino"/>
+        android:text="Cerveza"/>
 
 
 
@@ -116,15 +124,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
+        android:layout_marginTop="8dp"
+        android:text="Tiramisu"/>
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="43dp"
         android:layout_marginTop="0dp"
-        android:text="Jugos naturales"/>
+        android:text="Tres leches"/>
 
     <Button
         android:id="@+id/btnSiguiente"
         android:layout_width="320dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="20dp"
         android:background="@drawable/button"
         android:text="Siguente"
         android:textColor="#fff"/>
