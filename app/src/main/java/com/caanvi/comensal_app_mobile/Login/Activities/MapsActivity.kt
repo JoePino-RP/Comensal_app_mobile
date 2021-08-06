@@ -1,5 +1,6 @@
 package com.caanvi.comensal_app_mobile.Login.Activities
 
+import android.Manifest
 import android.content.pm.PackageManager
 import android.graphics.Color
 import android.os.AsyncTask
@@ -70,13 +71,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         if(ActivityCompat.checkSelfPermission(
                 this,
-                android.Manifest.permission.ACCESS_FINE_LOCATION
+                Manifest.permission.ACCESS_FINE_LOCATION
                 )!= PackageManager.PERMISSION_GRANTED
         )
         {
             ActivityCompat.requestPermissions(
                 this,
-                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),1
+                arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),1
             )
             return
         }
