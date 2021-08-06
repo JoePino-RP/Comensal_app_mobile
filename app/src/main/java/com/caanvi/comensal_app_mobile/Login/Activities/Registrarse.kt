@@ -2,7 +2,9 @@ package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.registro
@@ -10,6 +12,7 @@ import com.caanvi.comensal_app_mobile.Login.SQLite.DatabaseHelper
 import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityRegistrarseBinding
+import com.caanvi.comensal_app_mobile.databinding.RegistroDialogBinding
 
 
 class Registrarse : AppCompatActivity() {
@@ -17,9 +20,13 @@ class Registrarse : AppCompatActivity() {
     lateinit var handler: DatabaseHelper
     private lateinit var binding: ActivityRegistrarseBinding
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registrarse)
+
+
 
         binding = ActivityRegistrarseBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -47,6 +54,34 @@ class Registrarse : AppCompatActivity() {
     }
 
 
+    fun alertDialog (){
+        ///////////////ALERT DIALOG////////////////////
+
+        val view = View.inflate(this@Registrarse, R.layout.registro_dialog, null)
+        val binding = RegistroDialogBinding.bind(view)
+
+        val builder = AlertDialog.Builder(this@Registrarse)
+        builder.setView(view)
+
+        val dialog = builder.create()
+        dialog.show()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.setCancelable(false) //Linea donde asi ahagas clicc afuera del alert dialog no se cerrara, solo con la equisx(x)
+
+        binding.imageViewClose.setOnClickListener(){
+            dialog.dismiss()
+
+            //Cambio de Pantalla
+            val intent = Intent(applicationContext, ProfileActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+        }
+
+
+        ///////////////////////////////////////////////
+    }
+
+
 
 
 
@@ -68,13 +103,19 @@ class Registrarse : AppCompatActivity() {
                         //SQLite lo recordamos
                         insertarSQLite(usuarioData.idGeneral , usuarioData.emailGeneral)
 
+                        //Muestra Alert Dialog de confirmacion de Registro
+                        alertDialog()
+
+
                         //Mensaje de Inicio de Session Correcto
                         Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-
+                        /*
                         //Cambio de Pantalla
                         val intent = Intent(applicationContext, ProfileActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
+
+                         */
 
                     }else{
 
