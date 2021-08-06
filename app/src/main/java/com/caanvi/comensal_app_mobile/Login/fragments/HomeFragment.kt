@@ -57,15 +57,11 @@ class HomeFragment : Fragment() {
 
     fun initRecyclerRestaurant(){
         binding.recyclerRestaurant.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-        adapter = RestaurantAdapter(restaurantList)
+        //adapter = RestaurantAdapter(restaurantList)
         binding.recyclerRestaurant.adapter = adapter
     }
 
-    fun initRecyclerRestaurant1(){
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-        adapter = RestaurantAdapter(restaurantList)
-        binding.recyclerView.adapter = adapter
-    }
+
 
 
 
