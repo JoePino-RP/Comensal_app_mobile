@@ -14,12 +14,14 @@
         android:layout_height="match_parent"
         app:cardCornerRadius="20dp"
         android:layout_margin="20dp"
+
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/registroborder"
             android:layout_gravity="center">
 
 
