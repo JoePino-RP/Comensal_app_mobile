@@ -124,7 +124,7 @@
             android:id="@+id/gmail"
             android:layout_width="80dp"
             android:layout_height="70dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="60dp"
             android:layout_gravity="center"
             android:layout_marginTop="1dp"
 
@@ -170,7 +170,7 @@
             android:textSize="18dp"
             android:fontFamily="@font/roman"
 
-            android:layout_marginLeft="35dp"
+            android:layout_marginLeft="50dp"
             android:textColor="#000"
             android:layout_gravity="center"
             android:layout_marginTop="2dp"/>

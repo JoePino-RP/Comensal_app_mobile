@@ -91,6 +91,16 @@
         android:textStyle="bold"
         android:textColor="#fff"/>
 
+    <Button
+        android:id="@+id/btnGustos"
+        android:layout_width="320dp"
+        android:layout_height="55dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/button"
+        android:text="gustos Comensal"
+        android:textColor="#fff"/>
+
 
 
     <!--BOTón de fragments-->
