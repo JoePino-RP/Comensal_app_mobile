@@ -1,44 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/prefabRes"
-    android:layout_width="match_parent"
-    android:layout_height="150dp"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="horizontal"
-    android:layout_marginTop="35dp">
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_margin="20dp"
+    android:elevation="4dp"
+    app:cardCornerRadius="26dp"
+    android:id="@+id/prefabRes"
+    android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/imgRestaurant"
-        android:layout_width="match_parent"
-        android:layout_height="150dp">
-    </ImageView>
-    <TextView
-        android:id="@+id/txtNombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Nombre"/>
 
-    <TextView
-        android:id="@+id/txtPrecio"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Precio"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtNombre"/>
-    <TextView
-        android:id="@+id/txtDireccion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Direccion"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtPrecio"/>
 
-    <TextView
-        android:id="@+id/txtTelefono"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Telefono"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/txtDireccion"/>
+        android:layout_height="match_parent">
 
-</RelativeLayout>
+
+        <com.flaviofaria.kenburnsview.KenBurnsView
+            android:id="@+id/imgRestaurant"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+
+            android:background="@color/transparent_color"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/txtPrecio"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:text="Hello"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/avenir65medium"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+        <TextView
+            android:id="@+id/txtDireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="3dp"
+            android:text="Hello"
+            android:textColor="@android:color/white"
+            android:fontFamily="@font/avenir35light"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtPrecio" />
+
+        <TextView
+            android:id="@+id/txtTelefono"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/avenir35light"
+            android:text="Hello "
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
+
+        <Button
+            android:id="@+id/btnIr"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/avenir65medium"
+            android:text="Ir"
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/txtTelefono"
+            app:layout_constraintTop_toBottomOf="@+id/txtTelefono"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/btnReservar"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/avenir65medium"
+            android:text="Reservar"
+
+            android:textColor="#fff"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/txtTelefono"
+            app:layout_constraintTop_toBottomOf="@+id/txtTelefono"
+            tools:ignore="MissingConstraints" />
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            style="?android:attr/ratingBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:progressTint="@color/gold"
+            android:layout_marginLeft="20dp"
+            android:rating="4"
+            app:layout_constraintStart_toStartOf="@+id/linear"
+            app:layout_constraintTop_toBottomOf="@+id/linear"
+            tools:ignore="NotSibling" />
+
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginBottom="200dp"
+            android:orientation="horizontal"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <ImageButton
+                android:id="@+id/btnUbicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="6dp"
+                android:background="@drawable/ic_ubicacion"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"></ImageButton>
+
+            <TextView
+                android:id="@+id/txtNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="10dp"
+                android:text="Miami"
+                android:fontFamily="@font/avenir65medium"
+                android:textColor="@android:color/white"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/btnUbicacion"
+                app:layout_constraintStart_toStartOf="@id/btnUbicacion" />
+
+
+
+
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="168dp"
+            android:background="@drawable/ic_star_white_1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintStart_toStartOf="parent"></ImageButton>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</androidx.cardview.widget.CardView>
+
+

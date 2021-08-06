@@ -13,9 +13,9 @@ class RestaurantViewHolder(val view: View):RecyclerView.ViewHolder(view) {
     fun bind(_restaurant: Restaurant)
     {
         binding.txtNombre.text = _restaurant.nombre_res
-        binding.txtPrecio.text = _restaurant.precio_res
-        binding.txtDireccion.text = _restaurant.direccion_res
-        binding.txtTelefono.text = _restaurant.telefono_res
+        binding.txtPrecio.text = "Precio: "+_restaurant.precio_res
+        binding.txtDireccion.text = "Dirección: "+ _restaurant.direccion_res
+        binding.txtTelefono.text = "Teléfono: "+ _restaurant.telefono_res
         Picasso.get().load(_restaurant.imagen_res).into(binding.imgRestaurant)
 
         binding.prefabRes.setOnClickListener{

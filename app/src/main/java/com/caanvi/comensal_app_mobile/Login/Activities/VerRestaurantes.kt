@@ -28,6 +28,7 @@ class VerRestaurantes : AppCompatActivity() {
 
         getRestaurant()
         initRecyclerRestaurant()
+
     }
 
     //Funcion para regresar a la actividad anterior y que no se cierre la app presionando el boton hacia atras
@@ -44,6 +45,12 @@ class VerRestaurantes : AppCompatActivity() {
          binding.recyclerRestaurant.layoutManager = LinearLayoutManager(applicationContext)
          adapter = RestaurantAdapter(restaurantList)
          binding.recyclerRestaurant.adapter = adapter
+    }
+
+    fun initRecyclerRestaurant1(){
+        binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
+        adapter = RestaurantAdapter(restaurantList)
+        binding.recyclerView.adapter = adapter
     }
 
 
@@ -74,5 +81,34 @@ class VerRestaurantes : AppCompatActivity() {
                 }
             })
     }
+
+    fun getRestaurant1(){
+        RetrofitClient.instance.getRestaurant()
+            .enqueue(object: Callback<RestaurantResponse> {
+
+                override fun onFailure(call: Call<RestaurantResponse>, t: Throwable) {
+                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+                }
+
+                override fun onResponse(call: Call<RestaurantResponse>, response: Response<RestaurantResponse>) {
+
+                    if(response.body()?.conecto!!){
+
+                        val restaurantGot : RestaurantResponse? = response.body()
+                        val addRestaurant = restaurantGot?.restaurant?: emptyList()
+                        restaurantList.clear()
+                        restaurantList.addAll(addRestaurant)
+                        adapter.notifyDataSetChanged()
+
+                    }else{
+
+                        //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, "NO hay restaurantes", Toast.LENGTH_LONG).show()
+                    }
+                }
+            })
+    }
+
+
 
 }
