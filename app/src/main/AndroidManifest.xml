@@ -29,6 +29,11 @@
         <activity
             android:name=".Login.Activities.Ajustes"
             android:exported="true" />
+
+        <activity
+            android:name=".Login.Activities.GustosComensal"
+            android:exported="true" />
+
         <activity
             android:name=".Login.Activities.VerRestaurantes"
             android:exported="true" />
