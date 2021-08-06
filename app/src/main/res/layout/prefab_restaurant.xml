@@ -17,6 +17,8 @@
         android:layout_height="match_parent">
 
 
+
+
         <com.flaviofaria.kenburnsview.KenBurnsView
             android:id="@+id/imgRestaurant"
             android:layout_width="0dp"
