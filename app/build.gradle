@@ -1,8 +1,6 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-
-    //id 'kotlin-android-extensions'
 }
 
 android {
@@ -63,11 +61,5 @@ dependencies {
 
     //Imagenes
     implementation "com.squareup.picasso:picasso:2.71828"
-
-
-    implementation 'androidx.cardview:cardview:1.0.0'
-    implementation 'androidx.recyclerview:recyclerview:1.2.0'
-    implementation 'com.flaviofaria:kenburnsview:1.0.7'
-    implementation 'com.flaviofaria:kenburnsview:1.0.7'
 
 }

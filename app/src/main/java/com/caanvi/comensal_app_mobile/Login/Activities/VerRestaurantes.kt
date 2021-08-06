@@ -2,6 +2,7 @@ package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,7 +15,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+const val EXTRA_RESTAURANTLIST = "EXTRA_RESTAURANTLIST"
 class VerRestaurantes : AppCompatActivity() {
+
+
 
     private lateinit var binding : ActivityVerRestaurantesBinding
     private lateinit var adapter: RestaurantAdapter
@@ -43,17 +47,15 @@ class VerRestaurantes : AppCompatActivity() {
 
     fun initRecyclerRestaurant(){
          binding.recyclerRestaurant.layoutManager = LinearLayoutManager(applicationContext)
-         adapter = RestaurantAdapter(restaurantList)
+         adapter = RestaurantAdapter(restaurantList, object:RestaurantAdapter.OnClickListener{
+             override fun onItemClick(position: Int) {
+                 val intent = Intent(applicationContext, MapsActivity::class.java)
+                 intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
+                 startActivity(intent)
+             }
+         })
          binding.recyclerRestaurant.adapter = adapter
     }
-
-    fun initRecyclerRestaurant1(){
-        binding.recyclerView.layoutManager = LinearLayoutManager(applicationContext)
-        adapter = RestaurantAdapter(restaurantList)
-        binding.recyclerView.adapter = adapter
-    }
-
-
 
     fun getRestaurant(){
         RetrofitClient.instance.getRestaurant()
