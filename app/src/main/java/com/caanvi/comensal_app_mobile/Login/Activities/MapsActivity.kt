@@ -68,7 +68,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-
         if(ActivityCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION
@@ -82,6 +81,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             return
         }
 
+
         mMap.isMyLocationEnabled = true
         mMap.uiSettings.isCompassEnabled = true
         fusedLocation.lastLocation.addOnSuccessListener { location ->
@@ -89,22 +89,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 val userPlace = LatLng(location.latitude, location.longitude)
                 mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userPlace, 12f))
 
-                var latitud : Double = restaurant.latitud_res//-1.1560104016248383//restaurant.latitud_res
-                var longitud: Double =restaurant.longitud_res //-78.5851629985123//restaurant.latitud_res
-
-                //Log.i(TAG, "$latitud")
+                var latitud : Double = restaurant.latitud_res
+                var longitud: Double =restaurant.longitud_res
 
                 val restaurantPlace = LatLng(latitud, longitud)
-
-                //createPolylines()
 
                 mMap.addMarker(MarkerOptions().position(restaurantPlace).title(restaurant.nombre_res))
                 mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(restaurantPlace, 15f))
 
-
-
                 val URL = getDirectionURL(userPlace,restaurantPlace)
-                //Log.d("GoogleMap", "URL : $URL")
                 GetDirection(URL).execute()
 
             }
@@ -132,11 +125,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 val path =  ArrayList<LatLng>()
 
                 for (i in 0..(respObj.routes[0].legs[0].steps.size-1)){
-//                    val startLatLng = LatLng(respObj.routes[0].legs[0].steps[i].start_location.lat.toDouble()
-//                            ,respObj.routes[0].legs[0].steps[i].start_location.lng.toDouble())
-//                    path.add(startLatLng)
-//                    val endLatLng = LatLng(respObj.routes[0].legs[0].steps[i].end_location.lat.toDouble()
-//                            ,respObj.routes[0].legs[0].steps[i].end_location.lng.toDouble())
+                      val startLatLng = LatLng(respObj.routes[0].legs[0].steps[i].start_location.lat.toDouble()
+                              ,respObj.routes[0].legs[0].steps[i].start_location.lng.toDouble())
+                      path.add(startLatLng)
+                      val endLatLng = LatLng(respObj.routes[0].legs[0].steps[i].end_location.lat.toDouble()
+                              ,respObj.routes[0].legs[0].steps[i].end_location.lng.toDouble())
                     path.addAll(decodePolyline(respObj.routes[0].legs[0].steps[i].polyline.points))
                 }
                 result.add(path)
