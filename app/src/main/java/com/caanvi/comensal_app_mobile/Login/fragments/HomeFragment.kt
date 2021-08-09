@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
+import com.caanvi.comensal_app_mobile.Login.Activities.MainActivity
 import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
@@ -41,6 +42,14 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         // ASI SE UTILIZA EL BINDIN EN FRGMENTS, se cambia algo de la linea de codigo en esta parte
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+        //Cambiar de Vista de un activitie a otro
+        binding.txtBusqueda.setOnClickListener(){
+            val intent = Intent(requireActivity().applicationContext, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+
+        }
 
         getRestaurant()
         initRecyclerRestaurant()
@@ -127,6 +136,9 @@ class HomeFragment : Fragment() {
                 }
             })
     }
+
+
+
 
 
 

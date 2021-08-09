@@ -23,6 +23,67 @@
             android:background="#FF2929">
 
 
+            <CheckBox
+                android:id="@+id/checkBoxComidaRapida"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/avenir35light"
+                android:shadowColor="#FFFFFF"
+                android:text="Comida Rápida"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxComidaMar" />
+
+            <CheckBox
+                android:id="@+id/checkBoxComidaMar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="49dp"
+                android:fontFamily="@font/avenir35light"
+                android:shadowColor="#FFFFFF"
+                android:text="Comida de mar"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxTacos" />
+
+            <CheckBox
+                android:id="@+id/checkBoxTacos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_marginEnd="112dp"
+                android:fontFamily="@font/avenir35light"
+                android:shadowColor="#FFFFFF"
+                android:text="Tacos"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <CheckBox
+                android:id="@+id/checkBoxPostres"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/avenir35light"
+                android:shadowColor="#FFFFFF"
+                android:text="Postres"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxVegetales" />
+
             <ImageButton
                 android:id="@+id/imageButton6"
                 android:layout_width="wrap_content"
@@ -32,23 +93,23 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageButton7"
-                tools:layout_editor_absoluteY="133dp" />
+                tools:layout_editor_absoluteY="103dp" />
 
             <ImageButton
                 android:id="@+id/imageButton7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
+                android:layout_marginStart="12dp"
                 android:background="@drawable/ic_down_to_up"
                 app:layout_constraintStart_toEndOf="@+id/textView12"
-                tools:layout_editor_absoluteY="133dp" />
+                tools:layout_editor_absoluteY="103dp" />
 
             <ImageButton
                 android:id="@+id/imageButton5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="26dp"
                 android:background="@drawable/ic_down_to_up"
                 app:layout_constraintStart_toEndOf="@+id/textView11"
                 app:layout_constraintTop_toBottomOf="@+id/imageButton3" />
@@ -58,7 +119,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="26dp"
                 android:background="@drawable/ic_up_to_down"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -74,18 +135,10 @@
                 app:srcCompat="@drawable/ic_close_white" />
 
             <TextView
-                android:id="@+id/textView7"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="324dp" />
-
-            <TextView
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="55dp"
                 android:fontFamily="@font/avenir35light"
                 android:text="Ordenar Por"
                 android:textColor="#FFFFFF"
@@ -100,11 +153,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/avenir35light"
                 android:text="Destacados"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -113,11 +166,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="26dp"
                 android:fontFamily="@font/avenir35light"
                 android:text="Precio"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
@@ -125,12 +178,12 @@
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
+                android:layout_marginTop="24dp"
                 android:layout_marginEnd="124dp"
                 android:fontFamily="@font/avenir35light"
                 android:text="Puntuación"
                 android:textColor="#FFFFFF"
-                android:textSize="16sp"
+                android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView10" />
 
@@ -141,26 +194,26 @@
                 android:layout_marginStart="12dp"
                 android:background="@drawable/ic_up_to_down"
                 app:layout_constraintEnd_toStartOf="@+id/textView12"
-                app:layout_constraintHorizontal_bias="0.073"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/imageButton3"
                 tools:ignore="SpeakableTextPresentCheck"
-                tools:layout_editor_absoluteY="132dp" />
+                tools:layout_editor_absoluteY="103dp" />
 
             <ImageButton
                 android:id="@+id/imageButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:background="@drawable/ic_down_to_up"
                 app:layout_constraintStart_toEndOf="@+id/textView9"
-                tools:layout_editor_absoluteY="133dp" />
+                tools:layout_editor_absoluteY="103dp" />
 
             <TextView
                 android:id="@+id/textView16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="88dp"
+                android:layout_marginTop="60dp"
                 android:text="_______________________________________________________"
                 android:textColor="#FFFFFF"
                 app:layout_constraintStart_toStartOf="parent"
@@ -171,13 +224,121 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="148dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/avenir35light"
                 android:text="Filtrar por"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView16" />
+
+            <CheckBox
+                android:id="@+id/cehecBoxUbicacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="7dp"
+                android:fontFamily="@font/avenir35light"
+                android:shadowColor="#FFFFFF"
+                android:text="Ubicación"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+            <CheckBox
+                android:id="@+id/checkBoxCarnes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/avenir35light"
+                android:shadowColor="#FFFFFF"
+                android:text="Carnes"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/cehecBoxUbicacion" />
+
+            <CheckBox
+                android:id="@+id/checkBoxVegetales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/avenir35light"
+                android:shadowColor="#FFFFFF"
+                android:text="Vegetales"
+                android:textColor="#FFFFFF"
+                android:textColorHighlight="#FFFFFF"
+                android:textColorHint="#FFFFFF"
+                android:textColorLink="#FFFFFF"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxCarnes" />
+
+            <Button
+                android:id="@+id/btnAplicarFiltro"
+                android:layout_width="291dp"
+                android:layout_height="54dp"
+                android:layout_marginStart="64dp"
+                android:backgroundTint="#FFFFFF"
+                android:fontFamily="@font/avenir65medium"
+                android:text="Aplicar"
+                android:textColor="#FF2929"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:layout_editor_absoluteY="647dp" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="243dp"
+                android:layout_height="150dp"
+                android:layout_marginStart="84dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/check_inborder"
+                app:cardBackgroundColor="#F2EEEE"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBoxPostres">
+
+                <EditText
+                    android:id="@+id/editTextTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="32dp"
+                    android:background="@drawable/check_inborder"
+                    android:drawableEnd="@drawable/ic_reloj"
+                    android:ems="10"
+                    android:inputType="time"
+                    android:text="16   :   00 "
+                    android:textAlignment="center"
+                    android:textColor="#8B8080" />
+
+                <EditText
+                    android:id="@+id/editTextDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="85dp"
+                    android:background="@drawable/check_inborder"
+                    android:drawableEnd="@drawable/ic_calendario"
+                    android:ems="10"
+                    android:inputType="date"
+                    android:text="05   /   12   /   20"
+                    android:textAlignment="center"
+                    android:textColor="#8B8080" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/avenir35light"
+                    android:text="Check in"
+                    android:textColor="#8B8080
+" />
+            </androidx.cardview.widget.CardView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
