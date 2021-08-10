@@ -1,14 +1,11 @@
 package com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.R
-import com.caanvi.comensal_app_mobile.databinding.ActivityMainBinding
 import com.caanvi.comensal_app_mobile.databinding.PrefabRestaurantBinding
 import com.squareup.picasso.Picasso
 
@@ -28,13 +25,15 @@ class RestaurantAdapter (private val _restaurant:List<Restaurant>, val onClickLi
     override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
         var binding = PrefabRestaurantBinding.bind(holder.itemView)
 
-        binding.txtNombre.text = _restaurant[position].nombre_res
-        binding.txtPrecio.text = _restaurant[position].precio_res
-        binding.txtDireccion.text = _restaurant[position].direccion_res
-        binding.txtTelefono.text = _restaurant[position].telefono_res
+        //Añadi el texto que identifica a la información
+        binding.txtNombre.text = "Nombre: "+ _restaurant[position].nombre_res
+        binding.txtPrecio.text = "Precio: "+_restaurant[position].precio_res
+        binding.txtDireccion.text ="Dirección: "+ _restaurant[position].direccion_res
+        binding.txtTelefono.text ="Teléfono: "+ _restaurant[position].telefono_res
         Picasso.get().load(_restaurant[position].imagen_res).into(binding.imgRestaurant)
 
-        binding.prefabRes.setOnClickListener{
+        //Boton para ir al mapa
+        binding.btnIr.setOnClickListener{
             onClickListener.onItemClick(position)
         }
 

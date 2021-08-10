@@ -2,7 +2,6 @@ package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -55,6 +54,10 @@ class VerRestaurantes : AppCompatActivity() {
              }
          })
          binding.recyclerRestaurant.adapter = adapter
+    }
+
+    fun verUbicacionRestaurant(){
+
     }
 
     fun getRestaurant(){
