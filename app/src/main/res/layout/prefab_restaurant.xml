@@ -50,7 +50,7 @@
             android:text="Hello"
             android:textColor="@android:color/white"
             android:fontFamily="@font/avenir65medium"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
@@ -63,7 +63,7 @@
             android:text="Hello"
             android:textColor="@android:color/white"
             android:fontFamily="@font/avenir35light"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtPrecio" />
 
@@ -76,7 +76,7 @@
             android:fontFamily="@font/avenir35light"
             android:text="Hello "
             android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtDireccion" />
 
@@ -112,6 +112,7 @@
             tools:ignore="MissingConstraints" />
 
         <RatingBar
+            android:visibility="gone"
             android:id="@+id/ratingBar"
             style="?android:attr/ratingBarStyleSmall"
             android:layout_width="wrap_content"
@@ -128,8 +129,8 @@
         <LinearLayout
             android:id="@+id/linear"
             android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:layout_marginBottom="200dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="170dp"
             android:orientation="horizontal"
             android:padding="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -150,13 +151,13 @@
             <TextView
                 android:id="@+id/txtNombre"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
 
                 android:layout_marginLeft="10dp"
-                android:text="Miami"
                 android:fontFamily="@font/avenir65medium"
+                android:text="Miami"
                 android:textColor="@android:color/white"
-                android:textSize="30sp"
+                android:textSize="19sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="@id/btnUbicacion"
                 app:layout_constraintStart_toStartOf="@id/btnUbicacion" />
@@ -169,11 +170,11 @@
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="168dp"
+            android:layout_marginBottom="140dp"
             android:background="@drawable/ic_star_white_1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.92"
+            app:layout_constraintHorizontal_bias="0.953"
             app:layout_constraintStart_toStartOf="parent"></ImageButton>
 
 
