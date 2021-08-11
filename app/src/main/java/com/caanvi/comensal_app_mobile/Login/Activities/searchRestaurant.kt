@@ -40,8 +40,18 @@ class searchRestaurant : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     fun initRecyclerRestaurant(){
+        //binding.recyclerSearchRestaurant.layoutManager = LinearLayoutManager(applicationContext)
+       // adapter = SearchRestaurantAdapter(restaurantList)
+        //binding.recyclerSearchRestaurant.adapter = adapter
+
         binding.recyclerSearchRestaurant.layoutManager = LinearLayoutManager(applicationContext)
-        adapter = SearchRestaurantAdapter(restaurantList)
+        adapter = SearchRestaurantAdapter(restaurantList, object: SearchRestaurantAdapter.OnClickListener{
+            override fun onItemClick(position: Int) {
+                val intent = Intent(applicationContext, MapsActivity::class.java)
+                intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
+                startActivity(intent)
+            }
+        })
         binding.recyclerSearchRestaurant.adapter = adapter
     }
 

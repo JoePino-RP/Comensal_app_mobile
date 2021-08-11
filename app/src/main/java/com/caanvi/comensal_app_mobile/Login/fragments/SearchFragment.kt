@@ -1,6 +1,7 @@
 package www.sanju.customtabbar.Fragments
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,8 @@ import android.widget.Toast
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
+import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
@@ -60,9 +63,19 @@ class SearchFragment : Fragment() , SearchView.OnQueryTextListener {
 
 
     fun initRecyclerRestaurant(){
-        binding.recyclerRestaurant.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-        adapter = SearchRestaurantAdapter(restaurantList)
+        //binding.recyclerRestaurant.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+        //adapter = SearchRestaurantAdapter(restaurantList)
 
+        //binding.recyclerRestaurant.adapter = adapter
+
+        binding.recyclerRestaurant.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+        adapter = SearchRestaurantAdapter(restaurantList, object: SearchRestaurantAdapter.OnClickListener{
+            override fun onItemClick(position: Int) {
+                val intent = Intent(requireActivity().applicationContext, MapsActivity::class.java)
+                intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
+                startActivity(intent)
+            }
+        })
         binding.recyclerRestaurant.adapter = adapter
 
 

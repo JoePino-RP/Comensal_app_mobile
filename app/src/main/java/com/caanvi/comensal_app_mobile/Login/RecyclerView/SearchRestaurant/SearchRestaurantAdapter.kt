@@ -10,8 +10,11 @@ import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.PrefabRestaurantBinding
 import com.squareup.picasso.Picasso
 
-class SearchRestaurantAdapter (private val _restaurant:List<Restaurant>) : RecyclerView.Adapter<SearchRestaurantAdapter.SearchRestaurantViewHolder>() {
+class SearchRestaurantAdapter (private val _restaurant:List<Restaurant>, val onClickListener: OnClickListener) : RecyclerView.Adapter<SearchRestaurantAdapter.SearchRestaurantViewHolder>() {
 
+    interface OnClickListener{
+        fun onItemClick(position : Int)
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchRestaurantViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.prefab_restaurant ,parent,false)
@@ -27,9 +30,11 @@ class SearchRestaurantAdapter (private val _restaurant:List<Restaurant>) : Recyc
         binding.txtTelefono.text ="Teléfono: "+ _restaurant[position].telefono_res
         Picasso.get().load(_restaurant[position].imagen_res).into(binding.imgRestaurant)
 
-        binding.prefabRes.setOnClickListener{
+        binding.btnIr.setOnClickListener{
             //Toast.makeText(view.context, "Este es su id : " + _restaurant.id_res, Toast.LENGTH_LONG).show()
+            onClickListener.onItemClick(position)
         }
+
     }
 
     override fun getItemCount() : Int = _restaurant.size
