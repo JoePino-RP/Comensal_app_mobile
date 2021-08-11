@@ -62,6 +62,7 @@ class SearchFragment : Fragment() , SearchView.OnQueryTextListener {
     fun initRecyclerRestaurant(){
         binding.recyclerRestaurant.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
         adapter = SearchRestaurantAdapter(restaurantList)
+
         binding.recyclerRestaurant.adapter = adapter
 
 
