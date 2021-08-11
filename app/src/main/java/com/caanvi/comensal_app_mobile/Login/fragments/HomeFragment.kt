@@ -11,7 +11,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
-import com.caanvi.comensal_app_mobile.Login.Activities.MainActivity
+import com.caanvi.comensal_app_mobile.Login.Activities.FiltroBusqueda
 import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
@@ -44,8 +44,8 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
 
         //Cambiar de Vista de un activitie a otro
-        binding.txtBusqueda.setOnClickListener(){
-            val intent = Intent(requireActivity().applicationContext, MainActivity::class.java)
+        binding.btnBusqueda.setOnClickListener(){
+            val intent = Intent(requireActivity().applicationContext, FiltroBusqueda::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
 

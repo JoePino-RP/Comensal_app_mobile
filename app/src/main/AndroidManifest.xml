@@ -2,7 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.caanvi.comensal_app_mobile">
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -21,7 +20,9 @@
         android:usesCleartextTraffic="true"
         tools:replace="android:usesCleartextTraffic"
         tools:targetApi="n">
-
+        <activity
+            android:name=".Login.Activities.FiltroBusqueda"
+            android:exported="true" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -36,12 +37,10 @@
 
         <activity
             android:name=".Login.Activities.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
-
+            android:label="@string/title_activity_maps" />
         <activity
             android:name=".Login.Activities.GustosComensal"
-            android:label="@string/title_activity_maps"></activity>
-
+            android:label="@string/title_activity_maps" />
         <activity android:name=".Login.Activities.searchRestaurant" />
         <activity
             android:name=".Login.Activities.SplahActivity"
