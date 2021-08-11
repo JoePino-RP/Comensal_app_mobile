@@ -20,7 +20,8 @@
             android:layout_marginTop="20dp"
             android:letterSpacing="0.03"
             android:text="Indicanos cuales son tus comidas favoritas"
-            android:textColor="#68329b"
+            android:fontFamily="@font/avenirltstd"
+            android:textColor="#fc4444"
             android:textSize="30sp"
             android:textStyle="bold" />
 
@@ -31,20 +32,21 @@
         android:layout_width="112dp"
         android:layout_height="33dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="25dp"
         android:layout_marginEnd="32dp"
         android:letterSpacing="0.03"
         android:text="Comidas"
-        android:textColor="#68329b"
+        android:fontFamily="@font/avenirltstd"
+        android:textColor="#fc4444"
         android:textSize="25sp"
-        android:textStyle="bold" />
+         />
 
     <CheckBox
         android:id="@+id/checkBox"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="Hamburguesa" />
 
     <CheckBox
@@ -72,7 +74,8 @@
         android:layout_marginEnd="32dp"
         android:letterSpacing="0.03"
         android:text="Bebidas"
-        android:textColor="#68329b"
+        android:fontFamily="@font/avenirltstd"
+        android:textColor="#fc4444"
         android:textSize="25sp"
         android:textStyle="bold" />
     <CheckBox
@@ -80,7 +83,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="Gaseosa"/>
 
     <CheckBox
@@ -110,7 +113,8 @@
         android:layout_marginEnd="32dp"
         android:letterSpacing="0.03"
         android:text="Postres"
-        android:textColor="#68329b"
+        android:fontFamily="@font/avenirltstd"
+        android:textColor="#fc4444"
         android:textSize="25sp"
         android:textStyle="bold" />
 
@@ -119,7 +123,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="43dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:text="Tiramisu"/>
 
     <CheckBox
@@ -135,7 +139,7 @@
         android:layout_width="320dp"
         android:layout_height="55dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/button"
         android:text="Siguente"
         android:textColor="#fff"/>
