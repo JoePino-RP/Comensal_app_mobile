@@ -4,23 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_margin="20dp"
+    android:layout_margin="40dp"
     android:elevation="4dp"
     app:cardCornerRadius="26dp"
-    android:id="@+id/prefabRes"
+    android:id="@+id/platos"
     android:layout_height="wrap_content">
 
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        >
 
 
         <com.flaviofaria.kenburnsview.KenBurnsView
             android:id="@+id/imgRestaurant"
-            android:layout_width="371dp"
-            android:layout_height="188dp"
+            android:layout_width="186dp"
+            android:layout_height="186dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,15 +44,14 @@
             app:layout_constraintVertical_bias="0.0" />
 
 
-
         <TextView
             android:id="@+id/txtNombrePlato"
             android:layout_width="161dp"
             android:layout_height="20dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
             android:text="3/4 Res"
-            app:layout_constraintEnd_toEndOf="@+id/imgRestaurant"
-            app:layout_constraintHorizontal_bias="0.4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.333"
             app:layout_constraintStart_toEndOf="@+id/view"
             app:layout_constraintTop_toTopOf="parent" />
 
