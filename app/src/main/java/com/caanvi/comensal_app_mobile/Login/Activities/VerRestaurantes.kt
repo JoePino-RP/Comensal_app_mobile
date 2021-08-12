@@ -34,11 +34,11 @@ class VerRestaurantes : AppCompatActivity() {
         binding = ActivityVerRestaurantesBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        getRestaurant()
-        initRecyclerRestaurant()
+        //getRestaurant()
+        //initRecyclerRestaurant()
 
-        getPlatos()
-        initRecyclerPlatos()
+        //getPlatos()
+        //initRecyclerPlatos()
 
     }
 

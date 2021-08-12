@@ -50,5 +50,10 @@ interface Api {
     @GET("Restaurante/consultarPlatos.php")
     fun getPlatos() : Call<PlatosResponse>
 
+
+    //
+    @GET("Restaurante/consultarCategoriasComida.php")
+    fun getCategorias() : Call<CategoriasResponse>
+
 }
 

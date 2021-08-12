@@ -7,6 +7,7 @@ import androidx.viewpager.widget.ViewPager
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityPrincipalFragmentsBinding
 
+
 class PrincipalFragments : AppCompatActivity() {
 
     private lateinit var homeBtn: ImageButton
@@ -23,6 +24,7 @@ class PrincipalFragments : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal_fragments)
+
 
         // init views
         mViewPager = findViewById(R.id.mViewPager)

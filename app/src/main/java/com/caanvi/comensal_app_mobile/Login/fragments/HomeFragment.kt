@@ -14,13 +14,15 @@ import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
 import com.caanvi.comensal_app_mobile.Login.Activities.FiltroBusqueda
 import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
-import com.caanvi.comensal_app_mobile.Login.Modals.Platos
-import com.caanvi.comensal_app_mobile.Login.Modals.PlatosResponse
+import com.caanvi.comensal_app_mobile.Login.Modals.Categorias
+import com.caanvi.comensal_app_mobile.Login.Modals.CategoriasResponse
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
-import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetPlatos.PlatosAdapter
+import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetCategorias.CategoriasAdapter
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
 import com.caanvi.comensal_app_mobile.databinding.FragmentHomeBinding
+
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -36,9 +38,11 @@ class HomeFragment : Fragment() {
     /////////////////////////////////////////
 
     private lateinit var adapter: RestaurantAdapter
-    private lateinit var adapter1: PlatosAdapter
+    private lateinit var adapter1: CategoriasAdapter
     val restaurantList = mutableListOf<Restaurant>()
-    val platosList = mutableListOf<Platos>()
+    val categoriasList = mutableListOf<Categorias>()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -57,11 +61,13 @@ class HomeFragment : Fragment() {
         }
 
 
-        getPlatos()
-        initRecyclerPlatos()
+
 
         getRestaurant()
         initRecyclerRestaurant()
+
+        getCategorias()
+        initRecyclerCategorias()
 
 
         return binding.root
@@ -79,6 +85,7 @@ class HomeFragment : Fragment() {
 
     fun initRecyclerRestaurant(){
         binding.recyclerRestaurant.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+
         adapter = RestaurantAdapter(restaurantList, object:RestaurantAdapter.OnClickListener{
             override fun onItemClick(position: Int) {
                 val intent = Intent(requireActivity().applicationContext, MapsActivity::class.java)
@@ -125,12 +132,17 @@ class HomeFragment : Fragment() {
 
 
 
-    fun initRecyclerPlatos(){
+    fun initRecyclerCategorias(){
+
+
+        LinearLayoutManager(requireActivity().applicationContext).orientation = LinearLayoutManager.HORIZONTAL
+        //LinearLayoutManager(requireActivity().applicationContext).also { binding.recyclerView.layoutManager = it }
         binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-        adapter1 = PlatosAdapter(platosList, object:PlatosAdapter.OnClickListener{
+
+        adapter1 = CategoriasAdapter(categoriasList, object:CategoriasAdapter.OnClickListener{
             override fun onItemClick(position: Int) {
                 val intent = Intent(requireActivity().applicationContext, MapsActivity::class.java)
-                intent.putExtra(EXTRA_RESTAURANTLIST, platosList[position])
+                intent.putExtra(EXTRA_RESTAURANTLIST, categoriasList[position])
                 startActivity(intent)
             }
         })
@@ -138,22 +150,23 @@ class HomeFragment : Fragment() {
     }
 
 
-    fun getPlatos(){
-        RetrofitClient.instance.getPlatos()
-            .enqueue(object: Callback<PlatosResponse> {
+    fun getCategorias(){
+        LinearLayoutManager(requireActivity().applicationContext).orientation = LinearLayoutManager.HORIZONTAL
+        RetrofitClient.instance.getCategorias()
+            .enqueue(object: Callback<CategoriasResponse> {
 
-                override fun onFailure(call: Call<PlatosResponse>, t: Throwable) {
+                override fun onFailure(call: Call<CategoriasResponse>, t: Throwable) {
                     Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_LONG).show()
                 }
 
-                override fun onResponse(call: Call<PlatosResponse>, response: Response<PlatosResponse>) {
+                override fun onResponse(call: Call<CategoriasResponse>, response: Response<CategoriasResponse>) {
 
                     if(response.body()?.conecto!!){
 
-                        val platosGot : PlatosResponse? = response.body()
-                        val addPlatos = platosGot?.platos?: emptyList()
-                        platosList.clear()
-                        platosList.addAll(addPlatos)
+                        val platosGot : CategoriasResponse? = response.body()
+                        val addPlatos = platosGot?.categorias?: emptyList()
+                        categoriasList.clear()
+                        categoriasList.addAll(addPlatos)
                         adapter1.notifyDataSetChanged()
 
                     }else{
