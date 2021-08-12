@@ -8,6 +8,7 @@ import com.caanvi.comensal_app_mobile.Login.Modals.Platos
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.PlatosBinding
 
+
 import com.squareup.picasso.Picasso
 
 class PlatosAdapter (private val _restaurant:List<Platos>, val onClickListener: OnClickListener):  RecyclerView.Adapter<PlatosAdapter.PlatosViewHolder>() {
@@ -27,8 +28,9 @@ class PlatosAdapter (private val _restaurant:List<Platos>, val onClickListener: 
         var binding = PlatosBinding.bind(holder.itemView)
 
 
+
             //Añadi el texto que identifica a la información
-        binding.txtNombrePlato.text = "Nombre: "+ _restaurant[position].nombre_plato
+        binding.txtNombrePlato.text =  _restaurant[position].nombre_plato
         binding.txtPrecioPlato.text = "Precio: "+_restaurant[position].precio_plato
         binding.txtDescripcionPlato.text ="Descripcion: "+ _restaurant[position].descripcion_plato
        // binding.txtTelefono.text ="Teléfono: "+ _restaurant[position].
