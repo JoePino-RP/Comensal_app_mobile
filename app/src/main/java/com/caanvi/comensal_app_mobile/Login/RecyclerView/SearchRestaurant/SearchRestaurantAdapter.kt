@@ -24,7 +24,7 @@ class SearchRestaurantAdapter (private val _restaurant:List<Restaurant>, val onC
     override fun onBindViewHolder(holder: SearchRestaurantViewHolder, position: Int) {
         var binding = PrefabRestaurantBinding.bind(holder.itemView)
 
-        binding.txtNombre.text = _restaurant[position].nombre_res
+        binding.txtRestaurantName.text = _restaurant[position].nombre_res
         binding.txtPrecio.text = "Precio: "+_restaurant[position].precio_res
         binding.txtDireccion.text ="Dirección: "+ _restaurant[position].direccion_res
         binding.txtTelefono.text ="Teléfono: "+ _restaurant[position].telefono_res

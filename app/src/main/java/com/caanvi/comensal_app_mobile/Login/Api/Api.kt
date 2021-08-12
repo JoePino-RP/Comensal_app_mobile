@@ -2,7 +2,6 @@ package com.caanvi.comensal_app_mobile.Login.Api
 
 import com.caanvi.comensal_app_mobile.Login.Modals.*
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
@@ -45,6 +44,11 @@ interface Api {
     fun searchRestaurant(
         @Field ("name") name:String
     ) : Call<RestaurantResponse>
+
+
+    //
+    @GET("Restaurante/consultarPlatos.php")
+    fun getPlatos() : Call<PlatosResponse>
 
 }
 

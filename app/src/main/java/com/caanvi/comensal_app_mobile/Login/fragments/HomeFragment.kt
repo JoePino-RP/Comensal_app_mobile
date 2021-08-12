@@ -14,8 +14,11 @@ import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
 import com.caanvi.comensal_app_mobile.Login.Activities.FiltroBusqueda
 import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
+import com.caanvi.comensal_app_mobile.Login.Modals.Platos
+import com.caanvi.comensal_app_mobile.Login.Modals.PlatosResponse
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
+import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetPlatos.PlatosAdapter
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
 import com.caanvi.comensal_app_mobile.databinding.FragmentHomeBinding
 import retrofit2.Call
@@ -33,7 +36,9 @@ class HomeFragment : Fragment() {
     /////////////////////////////////////////
 
     private lateinit var adapter: RestaurantAdapter
+    private lateinit var adapter1: PlatosAdapter
     val restaurantList = mutableListOf<Restaurant>()
+    val platosList = mutableListOf<Platos>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -51,8 +56,13 @@ class HomeFragment : Fragment() {
 
         }
 
+
+        getPlatos()
+        initRecyclerPlatos()
+
         getRestaurant()
         initRecyclerRestaurant()
+
 
         return binding.root
 ////////////////////////////////////////////////////////////////////////
@@ -78,6 +88,8 @@ class HomeFragment : Fragment() {
         })
         binding.recyclerRestaurant.adapter = adapter
     }
+
+
 
 
 
@@ -110,28 +122,44 @@ class HomeFragment : Fragment() {
             })
     }
 
-    fun getRestaurant1(){
-        RetrofitClient.instance.getRestaurant()
-            .enqueue(object: Callback<RestaurantResponse> {
 
-                override fun onFailure(call: Call<RestaurantResponse>, t: Throwable) {
+
+
+    fun initRecyclerPlatos(){
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+        adapter1 = PlatosAdapter(platosList, object:PlatosAdapter.OnClickListener{
+            override fun onItemClick(position: Int) {
+                val intent = Intent(requireActivity().applicationContext, MapsActivity::class.java)
+                intent.putExtra(EXTRA_RESTAURANTLIST, platosList[position])
+                startActivity(intent)
+            }
+        })
+        binding.recyclerView.adapter = adapter1
+    }
+
+
+    fun getPlatos(){
+        RetrofitClient.instance.getPlatos()
+            .enqueue(object: Callback<PlatosResponse> {
+
+                override fun onFailure(call: Call<PlatosResponse>, t: Throwable) {
                     Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_LONG).show()
                 }
 
-                override fun onResponse(call: Call<RestaurantResponse>, response: Response<RestaurantResponse>) {
+                override fun onResponse(call: Call<PlatosResponse>, response: Response<PlatosResponse>) {
 
                     if(response.body()?.conecto!!){
 
-                        val restaurantGot : RestaurantResponse? = response.body()
-                        val addRestaurant = restaurantGot?.restaurant?: emptyList()
-                        restaurantList.clear()
-                        restaurantList.addAll(addRestaurant)
-                        adapter.notifyDataSetChanged()
+                        val platosGot : PlatosResponse? = response.body()
+                        val addPlatos = platosGot?.platos?: emptyList()
+                        platosList.clear()
+                        platosList.addAll(addPlatos)
+                        adapter1.notifyDataSetChanged()
 
                     }else{
 
                         //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-                        Toast.makeText(activity?.applicationContext, "NO hay restaurantes", Toast.LENGTH_LONG).show()
+                        Toast.makeText(activity?.applicationContext, "NO hay platos", Toast.LENGTH_LONG).show()
                     }
                 }
             })

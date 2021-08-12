@@ -27,7 +27,7 @@ class RestaurantAdapter (private val _restaurant:List<Restaurant>, val onClickLi
 
 
         //Añadi el texto que identifica a la información
-        binding.txtNombre.text =  _restaurant[position].nombre_res
+        binding.txtRestaurantName.text =  _restaurant[position].nombre_res
         binding.txtPrecio.text = "Precio: "+_restaurant[position].precio_res
         binding.txtDireccion.text ="Dirección: "+ _restaurant[position].direccion_res
         binding.txtTelefono.text ="Teléfono: "+ _restaurant[position].telefono_res
