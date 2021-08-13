@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
 import com.caanvi.comensal_app_mobile.Login.Activities.FiltroBusqueda
 import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
+import com.caanvi.comensal_app_mobile.Login.Activities.pruebas_todo
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Categorias
 import com.caanvi.comensal_app_mobile.Login.Modals.CategoriasResponse
@@ -21,8 +22,6 @@ import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetCategorias.CategoriasAdapter
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
 import com.caanvi.comensal_app_mobile.databinding.FragmentHomeBinding
-
-
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -92,6 +91,19 @@ class HomeFragment : Fragment() {
                 intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
                 startActivity(intent)
             }
+
+
+            override fun onItemClick1(position: Int) {
+
+                val intent = Intent(requireActivity().applicationContext, pruebas_todo::class.java)
+                intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
+                startActivity(intent)
+
+
+            }
+
+
+
         })
         binding.recyclerRestaurant.adapter = adapter
     }
@@ -135,7 +147,7 @@ class HomeFragment : Fragment() {
     fun initRecyclerCategorias(){
 
 
-        LinearLayoutManager(requireActivity().applicationContext).orientation = LinearLayoutManager.HORIZONTAL
+        //LinearLayoutManager(requireActivity().applicationContext).orientation = LinearLayoutManager.HORIZONTAL
         //LinearLayoutManager(requireActivity().applicationContext).also { binding.recyclerView.layoutManager = it }
         binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
 
@@ -145,13 +157,15 @@ class HomeFragment : Fragment() {
                 intent.putExtra(EXTRA_RESTAURANTLIST, categoriasList[position])
                 startActivity(intent)
             }
+
+
         })
         binding.recyclerView.adapter = adapter1
     }
 
 
     fun getCategorias(){
-        LinearLayoutManager(requireActivity().applicationContext).orientation = LinearLayoutManager.HORIZONTAL
+       // LinearLayoutManager(requireActivity().applicationContext).orientation = LinearLayoutManager.HORIZONTAL
         RetrofitClient.instance.getCategorias()
             .enqueue(object: Callback<CategoriasResponse> {
 

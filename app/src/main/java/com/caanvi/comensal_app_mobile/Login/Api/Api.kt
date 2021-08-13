@@ -45,10 +45,11 @@ interface Api {
         @Field ("name") name:String
     ) : Call<RestaurantResponse>
 
+    @FormUrlEncoded
 
-    //
-    @GET("Restaurante/consultarPlatos.php")
-    fun getPlatos() : Call<PlatosResponse>
+    @POST("Restaurante/consultarPlatos.php")
+
+    fun getPlatos(@Field ("rest") rest: String) : Call<PlatosResponse>
 
 
     //

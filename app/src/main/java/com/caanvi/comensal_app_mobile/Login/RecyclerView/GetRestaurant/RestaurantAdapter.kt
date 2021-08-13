@@ -14,7 +14,11 @@ class RestaurantAdapter (private val _restaurant:List<Restaurant>, val onClickLi
 
     interface OnClickListener{
         fun onItemClick(position : Int)
+        fun onItemClick1(position : Int)
+
     }
+
+
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
@@ -36,6 +40,11 @@ class RestaurantAdapter (private val _restaurant:List<Restaurant>, val onClickLi
         //Boton para ir al mapa
         binding.btnIr.setOnClickListener{
             onClickListener.onItemClick(position)
+        }
+
+        //Boton para ir al mapa
+        binding.btnReservar.setOnClickListener{
+            onClickListener.onItemClick1(position)
         }
 
     }

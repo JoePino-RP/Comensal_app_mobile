@@ -51,12 +51,13 @@
             android:layout_width="159dp"
             android:layout_height="31dp"
 
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/avenir35light"
             android:text="3/4 Res"
             android:textColor="#FF2929"
 
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.119"
             app:layout_constraintStart_toEndOf="@+id/view"
             app:layout_constraintTop_toTopOf="parent" />
 

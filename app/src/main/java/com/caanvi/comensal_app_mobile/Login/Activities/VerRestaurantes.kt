@@ -2,20 +2,12 @@ package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Platos
-import com.caanvi.comensal_app_mobile.Login.Modals.PlatosResponse
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
-import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetPlatos.PlatosAdapter
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
 import com.caanvi.comensal_app_mobile.databinding.ActivityVerRestaurantesBinding
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 const val EXTRA_RESTAURANTLIST = "EXTRA_RESTAURANTLIST"
 class VerRestaurantes : AppCompatActivity() {
@@ -51,6 +43,7 @@ class VerRestaurantes : AppCompatActivity() {
         startActivity(intent)
         finish()
     }
+    /*
 
     fun initRecyclerRestaurant(){
          binding.recyclerRestaurant.layoutManager = LinearLayoutManager(applicationContext)
@@ -138,6 +131,7 @@ class VerRestaurantes : AppCompatActivity() {
                 }
             })
     }
+    */
 
 
 

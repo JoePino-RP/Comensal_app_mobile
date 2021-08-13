@@ -1,68 +1,51 @@
-package www.sanju.customtabbar.Fragments
-
+package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
-import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Platos
 import com.caanvi.comensal_app_mobile.Login.Modals.PlatosResponse
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetPlatos.PlatosAdapter
-import com.caanvi.comensal_app_mobile.databinding.FragmentAddBinding
-
+import com.caanvi.comensal_app_mobile.databinding.ActivityPruebasTodoBinding
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+class pruebas_todo : AppCompatActivity() {
 
-/**
- * A simple [Fragment] subclass.
- */
-class AddFragment : Fragment() {
-
-    // ASI SE UTILIZA EL BINDIN EN FRGMENTS
-    private  var _binding : FragmentAddBinding? = null
-    private val binding get()= _binding!!
-    /////////////////////////////////////////
+    private lateinit var restaurante : Restaurant
+    private lateinit var binding: ActivityPruebasTodoBinding
 
     private lateinit var adapter1: PlatosAdapter
     val platosList = mutableListOf<Platos>()
 
-    private lateinit var restaurante :  Restaurant
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        // ASI SE UTILIZA EL BINDIN EN FRGMENTS, se cambia algo de la linea de codigo en esta parte
-        _binding = FragmentAddBinding.inflate(inflater, container, false)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        binding = ActivityPruebasTodoBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
 
-        ////////////////////////////////////////
-       // restaurante = intent.getSerializableExtra(EXTRA_RESTAURANTLIST) as Restaurant
-        //////////////////////////////////////////
+        restaurante = intent.getSerializableExtra(EXTRA_RESTAURANTLIST) as Restaurant
 
+        Toast.makeText(applicationContext, restaurante.id_res, Toast.LENGTH_LONG).show()
 
-        getPlatos("1") //restaurante.id//
+        getPlatos(restaurante.id_res) //restaurante.id//
         initRecyclerPlatos()
 
-        return binding.root
+
     }
 
     fun initRecyclerPlatos(){
-        binding.recyclerRestaurant.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
-        adapter1 = PlatosAdapter(platosList, object:PlatosAdapter.OnClickListener{
+        binding.recyclerRestaurant.layoutManager = LinearLayoutManager(applicationContext)
+        adapter1 = PlatosAdapter(platosList, object: PlatosAdapter.OnClickListener{
             override fun onItemClick(position: Int) {
-                val intent = Intent(requireActivity().applicationContext, MapsActivity::class.java)
+                val intent = Intent(applicationContext, MapsActivity::class.java)
                 intent.putExtra(EXTRA_RESTAURANTLIST, platosList[position])
                 startActivity(intent)
             }
@@ -76,7 +59,7 @@ class AddFragment : Fragment() {
             .enqueue(object: Callback<PlatosResponse> {
 
                 override fun onFailure(call: Call<PlatosResponse>, t: Throwable) {
-                    Toast.makeText(activity?.applicationContext, t.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
                 }
 
                 override fun onResponse(call: Call<PlatosResponse>, response: Response<PlatosResponse>) {
@@ -92,13 +75,10 @@ class AddFragment : Fragment() {
                     }else{
 
                         //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-                        Toast.makeText(activity?.applicationContext, "NO hay platos", Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, "NO hay platos", Toast.LENGTH_LONG).show()
                     }
                 }
             })
     }
-
-
-
 
 }

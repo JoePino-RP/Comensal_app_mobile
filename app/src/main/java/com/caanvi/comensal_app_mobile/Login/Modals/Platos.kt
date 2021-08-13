@@ -7,4 +7,5 @@ data class Platos (var id_platos :String,
                    var imagen_plato: String,
                    var precio_plato: String,
                    var descripcion_plato: String,
+                   var rest: String,
                   ) : Serializable
