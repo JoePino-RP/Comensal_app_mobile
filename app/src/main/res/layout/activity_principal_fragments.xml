@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/ver"
+    android:id="@+id/ver_fragments"
     tools:context=".Login.Activities.PrincipalFragments"
     android:orientation="vertical">
 
@@ -102,10 +102,17 @@
 
 
     </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerRestaurant"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/mViewPager"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent" >
+
+
+    </androidx.viewpager.widget.ViewPager>
 
 </RelativeLayout>

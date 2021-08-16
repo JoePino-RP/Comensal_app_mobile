@@ -31,9 +31,17 @@ class pruebas_todo : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
+
+
+
         restaurante = intent.getSerializableExtra(EXTRA_RESTAURANTLIST) as Restaurant
 
-        Toast.makeText(applicationContext, restaurante.id_res, Toast.LENGTH_LONG).show()
+        //Toast.makeText(applicationContext, restaurante.id_res, Toast.LENGTH_LONG).show()
+
+        binding.txtNombreRestaurante.setText(restaurante.nombre_res) //Trae el nombre del restaurante
+
+        //Picasso.get().load(restaurante.imagen_res).into(binding.mViewPager)
 
         getPlatos(restaurante.id_res) //restaurante.id//
         initRecyclerPlatos()

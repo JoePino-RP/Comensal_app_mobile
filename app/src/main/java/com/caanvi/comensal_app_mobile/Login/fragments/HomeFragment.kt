@@ -26,6 +26,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 /**
  * A simple [Fragment] subclass.
  */
@@ -50,6 +51,8 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         // ASI SE UTILIZA EL BINDIN EN FRGMENTS, se cambia algo de la linea de codigo en esta parte
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+
 
         //Cambiar de Vista de un activitie a otro
         binding.btnBusqueda.setOnClickListener(){
@@ -95,10 +98,20 @@ class HomeFragment : Fragment() {
 
             override fun onItemClick1(position: Int) {
 
+
                 val intent = Intent(requireActivity().applicationContext, pruebas_todo::class.java)
                 intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
                 startActivity(intent)
 
+
+                /*
+
+                //Pasar de fragment a fragment
+                val addFragment = AddFragment()
+                val transaction: FragmentTransaction = fragmentManager!!.beginTransaction()
+                transaction.replace(R.id.ver_fragments , addFragment)
+                transaction.commit()
+                */
 
             }
 

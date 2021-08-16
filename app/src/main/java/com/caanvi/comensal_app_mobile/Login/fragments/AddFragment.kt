@@ -33,6 +33,8 @@ class AddFragment : Fragment() {
     private val binding get()= _binding!!
     /////////////////////////////////////////
 
+
+
     private lateinit var adapter1: PlatosAdapter
     val platosList = mutableListOf<Platos>()
 
@@ -48,11 +50,18 @@ class AddFragment : Fragment() {
 
 
         ////////////////////////////////////////
-       // restaurante = intent.getSerializableExtra(EXTRA_RESTAURANTLIST) as Restaurant
+        //val intent = Intent()
+
+         //restaurante = intent.getSerializableExtra(EXTRA_RESTAURANTLIST) as Restaurant
         //////////////////////////////////////////
 
+        val intent = arguments
+        if (intent !=null) {
+            restaurante = intent.getSerializable(EXTRA_RESTAURANTLIST) as Restaurant
+        }
 
-        getPlatos("1") //restaurante.id//
+
+        getPlatos("1") //restaurante.id_res//
         initRecyclerPlatos()
 
         return binding.root
