@@ -5,7 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login.Activities.pruebas_todo">
+    android:background="@color/white"
+    tools:context=".Login.Activities.ReservaRestaurante">
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -104,8 +105,8 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerRestaurant"
-        android:layout_width="396dp"
-        android:layout_height="462dp"
+        android:layout_width="410dp"
+        android:layout_height="464dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="150dp"
         android:layout_marginEnd="1dp"
@@ -128,34 +129,72 @@
         android:layout_marginBottom="9dp"
         android:text="Reservar"></Button>
 
-    <TextView
-        android:id="@+id/txtNombreRestaurante"
-        android:layout_width="219dp"
-        android:layout_height="29dp"
-        android:layout_above="@+id/txtDescripcionRestaurante"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="118dp"
-        android:layout_marginEnd="74dp"
-        android:layout_marginBottom="10dp"
-        android:text="Nombre Restaurante" />
 
-    <ImageView
+    <com.flaviofaria.kenburnsview.KenBurnsView
         android:id="@+id/mViewPager"
         android:layout_width="match_parent"
         android:layout_height="144dp"
+        android:scaleType="centerCrop"
+
         android:layout_marginTop="0dp" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="145dp"
+
+        android:background="@color/transparent_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageButton
+        android:id="@+id/btnUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/ic_ubicacion"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></ImageButton>
+
+
+    <TextView
+        android:id="@+id/txtNombreRestaurante"
+        android:layout_width="332dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginBottom="695dp"
+        android:fontFamily="@font/avenir65medium"
+        android:text="Nombre Restaurante"
+
+        android:textColor="#FFFFFF"
+        android:textSize="22dp" />
 
     <TextView
         android:id="@+id/txtDescripcionRestaurante"
-        android:layout_width="364dp"
-        android:layout_height="79dp"
+        android:layout_width="379dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="27dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="602dp"
-        android:text="Descripcion Restaurante" />
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="608dp"
+        android:fontFamily="@font/avenir35light"
+        android:text="Descripcion Restaurante"
+        android:textColor="#ffff" />
+
 
 </RelativeLayout>

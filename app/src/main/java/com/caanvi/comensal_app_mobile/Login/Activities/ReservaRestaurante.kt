@@ -10,15 +10,17 @@ import com.caanvi.comensal_app_mobile.Login.Modals.Platos
 import com.caanvi.comensal_app_mobile.Login.Modals.PlatosResponse
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetPlatos.PlatosAdapter
-import com.caanvi.comensal_app_mobile.databinding.ActivityPruebasTodoBinding
+import com.caanvi.comensal_app_mobile.databinding.ActivityReservaRestauranteBinding
+import com.squareup.picasso.Picasso
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class pruebas_todo : AppCompatActivity() {
+class ReservaRestaurante : AppCompatActivity() {
 
     private lateinit var restaurante : Restaurant
-    private lateinit var binding: ActivityPruebasTodoBinding
+    private lateinit var binding: ActivityReservaRestauranteBinding
 
     private lateinit var adapter1: PlatosAdapter
     val platosList = mutableListOf<Platos>()
@@ -27,7 +29,7 @@ class pruebas_todo : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityPruebasTodoBinding.inflate(layoutInflater)
+        binding = ActivityReservaRestauranteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
 
@@ -41,7 +43,7 @@ class pruebas_todo : AppCompatActivity() {
 
         binding.txtNombreRestaurante.setText(restaurante.nombre_res) //Trae el nombre del restaurante
 
-        //Picasso.get().load(restaurante.imagen_res).into(binding.mViewPager)
+        Picasso.get().load(restaurante.imagen_res).into(binding.mViewPager)
 
         getPlatos(restaurante.id_res) //restaurante.id//
         initRecyclerPlatos()

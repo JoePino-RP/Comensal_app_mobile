@@ -21,7 +21,7 @@
         tools:replace="android:usesCleartextTraffic"
         tools:targetApi="n" >
         <activity
-            android:name=".Login.Activities.pruebas_todo"
+            android:name=".Login.Activities.ReservaRestaurante"
             android:exported="true" />
         <activity
             android:name=".Login.Activities.FiltroBusqueda"

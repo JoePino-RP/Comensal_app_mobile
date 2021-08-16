@@ -26,9 +26,13 @@ class PrincipalFragments : AppCompatActivity() {
 
     private lateinit var binding: ActivityPrincipalFragmentsBinding
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal_fragments)
+
+
 
 
         // init views
@@ -106,18 +110,24 @@ class PrincipalFragments : AppCompatActivity() {
 
 
         mViewPager.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+
             override fun onPageScrolled(
                 position: Int,
                 positionOffset: Float,
                 positionOffsetPixels: Int
+
             ) {
             }
 
             override fun onPageSelected(position: Int) {
                 changeTabs(position)
+
             }
 
-            override fun onPageScrollStateChanged(state: Int) {}
+            override fun onPageScrollStateChanged(state: Int) {
+
+
+            }
         })
 
 
@@ -214,13 +224,13 @@ class PrincipalFragments : AppCompatActivity() {
         binding.imageViewClose.setOnClickListener(){
             dialog.dismiss()
 
-/*
+
             //Cambio de Pantalla
             val intent = Intent(applicationContext, PrincipalFragments::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
 
- */
+
 
 
 

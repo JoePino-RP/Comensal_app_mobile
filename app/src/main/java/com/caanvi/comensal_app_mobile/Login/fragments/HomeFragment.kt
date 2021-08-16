@@ -10,15 +10,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
 import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
 import com.caanvi.comensal_app_mobile.Login.Activities.FiltroBusqueda
 import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
-import com.caanvi.comensal_app_mobile.Login.Activities.pruebas_todo
+import com.caanvi.comensal_app_mobile.Login.Activities.ReservaRestaurante
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Categorias
 import com.caanvi.comensal_app_mobile.Login.Modals.CategoriasResponse
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
+import com.caanvi.comensal_app_mobile.Login.RecyclerView.CenterZoomLayoutManager
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetCategorias.CategoriasAdapter
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
 import com.caanvi.comensal_app_mobile.databinding.FragmentHomeBinding
@@ -44,6 +46,7 @@ class HomeFragment : Fragment() {
 
 
 
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -51,6 +54,9 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         // ASI SE UTILIZA EL BINDIN EN FRGMENTS, se cambia algo de la linea de codigo en esta parte
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
+
+
+
 
 
 
@@ -99,7 +105,7 @@ class HomeFragment : Fragment() {
             override fun onItemClick1(position: Int) {
 
 
-                val intent = Intent(requireActivity().applicationContext, pruebas_todo::class.java)
+                val intent = Intent(requireActivity().applicationContext, ReservaRestaurante::class.java)
                 intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
                 startActivity(intent)
 
@@ -160,9 +166,21 @@ class HomeFragment : Fragment() {
     fun initRecyclerCategorias(){
 
 
-        //LinearLayoutManager(requireActivity().applicationContext).orientation = LinearLayoutManager.HORIZONTAL
-        //LinearLayoutManager(requireActivity().applicationContext).also { binding.recyclerView.layoutManager = it }
+        val linearLayoutManager = CenterZoomLayoutManager(requireActivity().applicationContext)
+
+
+        linearLayoutManager.orientation = LinearLayoutManager.HORIZONTAL
+        linearLayoutManager.reverseLayout = true
+        linearLayoutManager.stackFromEnd = true
         binding.recyclerView.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
+
+
+
+        //auto center views
+        val snapHelper = LinearSnapHelper()
+        snapHelper.attachToRecyclerView(binding.recyclerView)
+        binding.recyclerView.isNestedScrollingEnabled = false
+
 
         adapter1 = CategoriasAdapter(categoriasList, object:CategoriasAdapter.OnClickListener{
             override fun onItemClick(position: Int) {
