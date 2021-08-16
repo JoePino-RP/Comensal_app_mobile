@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable-v24/button.xml" value="0.2203125" />
+        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable-v24/button_azul.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable-v24/ic_add_black.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable-v24/ic_add_pink.xml" value="0.1125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable-v24/ic_home_black_.xml" value="0.1125" />
@@ -21,6 +22,7 @@
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/bottom_bar_shape.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/check_inborder.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/filtro.xml" value="0.1125" />
+        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_advertencia.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_aplaudir.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.1125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_buscar_2095.xml" value="0.1125" />
@@ -67,6 +69,7 @@
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_search.xml" value="0.22" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_settings.xml" value="0.17889492753623187" />
+        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragments_iniciarsesion_dialog.xml" value="0.33" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/places.xml" value="0.10833333333333334" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/platos.xml" value="0.33537519142419603" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/prefab_restaurant.xml" value="0.33" />

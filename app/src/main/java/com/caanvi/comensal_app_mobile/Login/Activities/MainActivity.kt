@@ -46,6 +46,15 @@ class MainActivity : AppCompatActivity() {
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }
+
+        binding.btnInvitado.setOnClickListener {
+            val intent = Intent(applicationContext, PrincipalFragments::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+            finish()
+        }
+
+
     }
 
 
@@ -71,9 +80,18 @@ class MainActivity : AppCompatActivity() {
                         Toast.makeText(applicationContext, "Log In Correcto", Toast.LENGTH_LONG).show()
 
                         //Cambio de Pantalla
+                        /*
                         val intent = Intent(applicationContext, ProfileActivity::class.java)
                         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                         startActivity(intent)
+
+                         */
+
+                        //Cambiar de Vista de un activitie a otro
+                            val intent = Intent(applicationContext, PrincipalFragments::class.java)
+                            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                            startActivity(intent)
+                            finish()
 
                     }else{
 
@@ -92,7 +110,8 @@ class MainActivity : AppCompatActivity() {
         if (handler.selectDB()){
             Toast.makeText(applicationContext,  "Usuario Recordado", Toast.LENGTH_LONG).show()
 
-            val intent = Intent(applicationContext, ProfileActivity::class.java)
+            //val intent = Intent(applicationContext, ProfileActivity::class.java)
+            val intent = Intent(applicationContext, PrincipalFragments ::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
         }else{
@@ -108,9 +127,6 @@ class MainActivity : AppCompatActivity() {
     override fun onBackPressed() {
         super.onBackPressed()
         //codigo adicional
-        val intent = Intent(applicationContext, MenuActi::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
-        startActivity(intent)
-        finish()
+
     }
 }

@@ -1,11 +1,16 @@
 package com.caanvi.comensal_app_mobile.Login.Activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
+import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityPrincipalFragmentsBinding
+import com.caanvi.comensal_app_mobile.databinding.FragmentsIniciarsesionDialogBinding
 
 
 class PrincipalFragments : AppCompatActivity() {
@@ -42,7 +47,18 @@ class PrincipalFragments : AppCompatActivity() {
 
         }
         notiBtn.setOnClickListener {
-            mViewPager.currentItem = 1
+            //mViewPager.currentItem = 1
+
+
+            if (!verificar()){
+
+
+                alertDialog()
+            }else {
+                mViewPager.currentItem = 1
+            }
+
+
 
         }
 
@@ -53,14 +69,30 @@ class PrincipalFragments : AppCompatActivity() {
         }
 
         addBtn.setOnClickListener {
-            mViewPager.currentItem = 3
+            //mViewPager.currentItem = 3
+            if (!verificar()){
+
+
+                alertDialog()
+            }else {
+                mViewPager.currentItem = 3
+            }
+
 
         }
 
 
 
         profileBtn.setOnClickListener {
-            mViewPager.currentItem = 4
+            //mViewPager.currentItem = 4
+
+            if (!verificar()){
+
+
+                alertDialog()
+            }else {
+                mViewPager.currentItem = 4
+            }
 
         }
 
@@ -161,4 +193,67 @@ class PrincipalFragments : AppCompatActivity() {
 
 
     }
+
+
+    fun alertDialog (){
+        ///////////////ALERT DIALOG////////////////////
+
+        val view = View.inflate(this@PrincipalFragments, R.layout.fragments_iniciarsesion_dialog, null)
+        val binding = FragmentsIniciarsesionDialogBinding.bind(view)
+
+
+        val builder = AlertDialog.Builder(this@PrincipalFragments)
+        builder.setView(view)
+
+        val dialog = builder.create()
+        dialog.show()
+        dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
+        dialog.setCancelable(false) //Linea donde asi ahagas clicc afuera del alert dialog no se cerrara, solo con la equisx(x)
+
+
+        binding.imageViewClose.setOnClickListener(){
+            dialog.dismiss()
+
+/*
+            //Cambio de Pantalla
+            val intent = Intent(applicationContext, PrincipalFragments::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+
+ */
+
+
+
+        }
+
+
+        binding.btnIniciarSesion.setOnClickListener(){
+            dialog.dismiss()
+            val intent = Intent(applicationContext, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
+
+        }
+
+
+        ///////////////////////////////////////////////
+    }
+
+
+    fun verificar () : Boolean {
+
+        if (usuarioData.idGeneral == ""){
+            return false
+        }else {
+            return true
+        }
+
+
+    }
+
+
+
+
+
+
 }
