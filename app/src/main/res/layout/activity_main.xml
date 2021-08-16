@@ -167,14 +167,14 @@
 
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="No tengo una Cuenta, "
-            android:textSize="18dp"
-            android:fontFamily="@font/roman"
-
-            android:layout_marginLeft="50dp"
-            android:textColor="#000"
             android:layout_gravity="center"
-            android:layout_marginTop="2dp"/>
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="2dp"
+
+            android:fontFamily="@font/roman"
+            android:text="No tengo una Cuenta, "
+            android:textColor="#000"
+            android:textSize="18dp" />
 
         <TextView
             android:id="@+id/goRegistro"
@@ -198,6 +198,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:padding="10dp"
         android:layout_width="match_parent"
+
         android:layout_height="wrap_content"
         >
 
@@ -205,17 +206,15 @@
             android:id="@+id/btnInvitado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ingresar como invitado "
-            android:textSize="18dp"
-            android:fontFamily="@font/roman"
+
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="2dp"
             android:background="@drawable/button_azul"
-            android:layout_marginLeft="50dp"
+            android:fontFamily="@font/roman"
+
+            android:text="Ingresar como invitado "
             android:textColor="#FFF"
-            android:layout_gravity="center"
-            android:layout_marginTop="2dp"/>
-
-
-
+            android:textSize="18dp" />
 
 
     </LinearLayout>
