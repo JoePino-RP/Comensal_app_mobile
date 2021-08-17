@@ -36,7 +36,7 @@ class PlatosAdapter (private val _restaurant:List<Platos>, val onClickListener: 
         binding.txtNombrePlato.text =  _restaurant[position].nombre_plato
         binding.txtPrecioPlato.text = "Precio: "+_restaurant[position].precio_plato
         binding.txtDescripcionPlato.text ="Descripcion: "+ _restaurant[position].descripcion_plato
-       // binding.txtTelefono.text ="Teléfono: "+ _restaurant[position].
+
         Picasso.get().load(_restaurant[position].imagen_plato).into(binding.imgRestaurant)
 
 

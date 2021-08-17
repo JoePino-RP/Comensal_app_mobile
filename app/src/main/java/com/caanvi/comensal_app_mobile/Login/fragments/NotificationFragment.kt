@@ -16,6 +16,7 @@ import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetFavorites.FavoriteAdapter
+import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
 import com.caanvi.comensal_app_mobile.databinding.FragmentNotificationBinding
 import retrofit2.Call
 import retrofit2.Callback
@@ -40,8 +41,11 @@ class NotificationFragment : Fragment() {
         _binding = FragmentNotificationBinding.inflate(inflater, container, false)
 
         //getFavorites(usuarioData.idGeneral)
-        getFavorites("1")
-        initRecyclerRestaurant()
+        if(usuarioData.idGeneral != "")
+        {
+            getFavorites("1")
+            initRecyclerRestaurant()
+        }
 
         return binding.root
     }

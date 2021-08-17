@@ -31,16 +31,9 @@ class ReservaRestaurante : AppCompatActivity() {
         binding = ActivityReservaRestauranteBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-
-
-
-
-
         restaurante = intent.getSerializableExtra(EXTRA_RESTAURANTLIST) as Restaurant
 
-        //Toast.makeText(applicationContext, restaurante.id_res, Toast.LENGTH_LONG).show()
-
-        binding.txtNombreRestaurante.setText(restaurante.nombre_res) //Trae el nombre del restaurante
+         binding.txtNombreRestaurante.setText(restaurante.nombre_res) //Trae el nombre del restaurante
 
         Picasso.get().load(restaurante.imagen_res).into(binding.mViewPager)
 
@@ -65,24 +58,26 @@ class ReservaRestaurante : AppCompatActivity() {
 
 
     fun getPlatos(id: String){ //id : String
+
+
         RetrofitClient.instance.getPlatos(id) //id
             .enqueue(object: Callback<PlatosResponse> {
 
-                override fun onFailure(call: Call<PlatosResponse>, t: Throwable) {
-                    Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
-                }
+             override fun onFailure(call: Call<PlatosResponse>, t: Throwable) {
+                 Toast.makeText(applicationContext, t.message, Toast.LENGTH_LONG).show()
+             }
 
-                override fun onResponse(call: Call<PlatosResponse>, response: Response<PlatosResponse>) {
+             override fun onResponse(call: Call<PlatosResponse>, response: Response<PlatosResponse>) {
 
-                    if(response.body()?.conecto!!){
+                 if(response.body()?.conecto!!){
 
-                        val platosGot : PlatosResponse? = response.body()
-                        val addPlatos = platosGot?.platos?: emptyList()
-                        platosList.clear()
-                        platosList.addAll(addPlatos)
-                        adapter1.notifyDataSetChanged()
+                     val platosGot : PlatosResponse? = response.body()
+                     val addPlatos = platosGot?.platos?: emptyList()
+                     platosList.clear()
+                     platosList.addAll(addPlatos)
+                     adapter1.notifyDataSetChanged()
 
-                    }else{
+                 }else{
 
                         //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
                         Toast.makeText(applicationContext, "NO hay platos", Toast.LENGTH_LONG).show()

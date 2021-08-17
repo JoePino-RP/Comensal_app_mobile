@@ -35,11 +35,25 @@ class ProfileFragment : Fragment() {
         handler = DatabaseHelper(requireActivity().applicationContext)
 
         binding.logout.setOnClickListener(){
-            eliminarSQLite(usuarioData.idGeneral)
+            if(usuarioData.idGeneral != "")
+            {
+                eliminarSQLite(usuarioData.idGeneral)
+            }
+            else{
+                val intent = Intent(requireActivity().applicationContext, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+            }
         }
-
-
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if(usuarioData.idGeneral != "")
+        {
+            binding.logout.text = usuarioData.emailGeneral
+        }
     }
 
     fun eliminarSQLite(id:String){
