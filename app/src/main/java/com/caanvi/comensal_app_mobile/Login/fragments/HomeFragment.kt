@@ -76,13 +76,10 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
 
         fusedLocation = LocationServices.getFusedLocationProviderClient(requireActivity().applicationContext)
 
+        initRecyclerRestaurant()
         startAll()
 
         binding.txtBusqueda.setOnQueryTextListener(this)
-
-        //Change to Properties
-
-
 
         //Cambiar de Vista de un activitie a otro
 

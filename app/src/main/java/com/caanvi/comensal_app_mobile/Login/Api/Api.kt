@@ -90,7 +90,7 @@ interface Api {
 
     //
     @FormUrlEncoded
-    @POST("Restaurante/consultarPlatos.php")
+    @POST("Platos/consultarPlatos.php")
     fun getPlatos(
         @Field ("rest") rest: String
     ) : Call<PlatosResponse>
