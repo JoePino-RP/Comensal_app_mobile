@@ -1,11 +1,17 @@
 package com.caanvi.comensal_app_mobile.Login.Activities
 
+import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageButton
+import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
+import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityPrincipalFragmentsBinding
+import com.caanvi.comensal_app_mobile.databinding.RegistroDialogBinding
 
 
 class PrincipalFragments : AppCompatActivity() {
@@ -25,7 +31,6 @@ class PrincipalFragments : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_principal_fragments)
 
-
         // init views
         mViewPager = findViewById(R.id.mViewPager)
         homeBtn = findViewById(R.id.homeBtn)
@@ -35,14 +40,15 @@ class PrincipalFragments : AppCompatActivity() {
         notiBtn = findViewById(R.id.notiBtn)
 
 
-        //onclick listner
+        //onclick listener
 
         homeBtn.setOnClickListener {
             mViewPager.currentItem = 0
 
         }
         notiBtn.setOnClickListener {
-            mViewPager.currentItem = 1
+
+                mViewPager.currentItem = 1
 
         }
 
@@ -158,7 +164,6 @@ class PrincipalFragments : AppCompatActivity() {
 
         }
 
-
-
     }
+
 }

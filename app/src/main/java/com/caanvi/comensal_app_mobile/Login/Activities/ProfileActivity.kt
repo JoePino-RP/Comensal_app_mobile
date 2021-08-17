@@ -35,7 +35,7 @@ class ProfileActivity : AppCompatActivity() {
        binding.nombreTxt.text = usuarioData.emailGeneral
    }
 
-    fun eliminarSQLite(id:String){
+   fun eliminarSQLite(id:String){
         handler.deleteDB(id)
         val intent = Intent(applicationContext, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK

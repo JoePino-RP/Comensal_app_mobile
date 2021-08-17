@@ -69,8 +69,6 @@ class MenuActi : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
-
-
     }
 
 

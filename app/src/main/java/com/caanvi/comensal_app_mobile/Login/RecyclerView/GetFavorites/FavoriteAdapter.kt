@@ -1,29 +1,28 @@
-package com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant
+package com.caanvi.comensal_app_mobile.Login.RecyclerView.GetFavorites
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
+import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.PrefabRestaurantBinding
 import com.squareup.picasso.Picasso
 
-class RestaurantAdapter (private val _restaurant:List<Restaurant>, val onClickListener: OnClickListener) : RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder>() {
-
+class FavoriteAdapter (private val _restaurant:List<Restaurant>, val onClickListener: OnClickListener) : RecyclerView.Adapter<FavoriteAdapter.FavoriteViewHolder>() {
 
     interface OnClickListener{
         fun onItemClick(position : Int)
         fun onItemClick1(position : Int)
-        fun onItemStar(position : Int)
+
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RestaurantViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.prefab_restaurant ,parent,false)
-        return RestaurantViewHolder (view)
+        return FavoriteViewHolder (view)
     }
-
-    override fun onBindViewHolder(holder: RestaurantViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: FavoriteViewHolder, position: Int) {
         var binding = PrefabRestaurantBinding.bind(holder.itemView)
 
 
@@ -44,14 +43,8 @@ class RestaurantAdapter (private val _restaurant:List<Restaurant>, val onClickLi
             onClickListener.onItemClick1(position)
         }
 
-        //Boton Estrella Favorito
-        binding.bntStarFavorite.setOnClickListener{
-            onClickListener.onItemStar(position)
-        }
-
     }
-
     override fun getItemCount() : Int = _restaurant.size
 
-    class RestaurantViewHolder(view: View):RecyclerView.ViewHolder(view)
+    class FavoriteViewHolder(view: View): RecyclerView.ViewHolder(view)
 }

@@ -1,12 +1,17 @@
 package com.caanvi.comensal_app_mobile.Login.Activities
 
 import android.Manifest
+import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Color
+import android.location.LocationManager
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.Settings
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import com.caanvi.comensal_app_mobile.Login.Modals.GoogleMapDTO
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
@@ -37,6 +42,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var fusedLocation : FusedLocationProviderClient
 
+    //Variables para Verificar GPS activo o no
+    private lateinit var locationManager: LocationManager
+    var intent1: Intent? = null
+    var gpsStatus = false
+
     //private lateinit var binding: ActivityMapsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -48,6 +58,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         setContentView(R.layout.activity_maps)
 
         restaurant = intent.getSerializableExtra(EXTRA_RESTAURANTLIST) as Restaurant
+
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
@@ -81,30 +92,65 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             return
         }
 
+        if(checkGpsStatus()){
+            mMap.isMyLocationEnabled = true
+            mMap.uiSettings.isCompassEnabled = true
+            fusedLocation.lastLocation.addOnSuccessListener { location ->
+                if(location != null){
+                    val userPlace = LatLng(location.latitude, location.longitude)
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userPlace, 12f))
 
-        mMap.isMyLocationEnabled = true
-        mMap.uiSettings.isCompassEnabled = true
-        fusedLocation.lastLocation.addOnSuccessListener { location ->
-            if(location != null){
-                val userPlace = LatLng(location.latitude, location.longitude)
-                mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userPlace, 12f))
+                    var latitud : Double = restaurant.latitud_res
+                    var longitud: Double =restaurant.longitud_res
 
-                var latitud : Double = restaurant.latitud_res
-                var longitud: Double =restaurant.longitud_res
+                    val restaurantPlace = LatLng(latitud, longitud)
 
-                val restaurantPlace = LatLng(latitud, longitud)
+                    mMap.addMarker(MarkerOptions().position(restaurantPlace).title(restaurant.nombre_res))
+                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(restaurantPlace, 15f))
 
-                mMap.addMarker(MarkerOptions().position(restaurantPlace).title(restaurant.nombre_res))
-                mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(restaurantPlace, 15f))
+                    val URL = getDirectionURL(userPlace,restaurantPlace)
+                    GetDirection(URL).execute()
 
-                val URL = getDirectionURL(userPlace,restaurantPlace)
-                GetDirection(URL).execute()
-
+                }
             }
         }
-    }
-    
+        else{
+            alertMessage()
+        }
 
+    }
+
+
+
+    private fun checkGpsStatus() :Boolean {
+        locationManager = this.getSystemService(Context.LOCATION_SERVICE) as LocationManager
+        gpsStatus = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+        //if (gpsStatus)
+        return gpsStatus
+    }
+
+    fun gpsStatus() {
+        intent1 = Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        startActivity(intent1);
+    }
+
+    fun alertMessage(){
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("GPS")
+        builder.setMessage("Para usar el App debes activar el GPS")
+        builder.setCancelable(false)
+        builder.setPositiveButton("Ok"){
+                dialog, wich-> returnBack()
+        }
+        builder.show()
+    }
+
+    fun returnBack(){
+        val intent = Intent(applicationContext, MenuActi::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+        startActivity(intent)
+        finish()
+    }
 
     fun getDirectionURL(origin:LatLng,dest:LatLng) : String{
         return "https://maps.googleapis.com/maps/api/directions/json?origin=${origin.latitude},${origin.longitude}&destination=${dest.latitude},${dest.longitude}&sensor=false&mode=driving&key=AIzaSyDXy8tIDeOORATubYg4xhfpaktCs4u5K_A"

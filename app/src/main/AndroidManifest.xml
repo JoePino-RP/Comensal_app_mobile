@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.caanvi.comensal_app_mobile" >
+    package="com.caanvi.comensal_app_mobile">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -19,7 +19,8 @@
         android:theme="@style/Theme.Comensal_app_mobile"
         android:usesCleartextTraffic="true"
         tools:replace="android:usesCleartextTraffic"
-        tools:targetApi="n" >
+        tools:targetApi="n">
+        <activity android:name=".Login.Activities.popUpProperties"></activity>
         <activity
             android:name=".Login.Activities.pruebas_todo"
             android:exported="true" />
@@ -49,7 +50,7 @@
         <activity
             android:name=".Login.Activities.SplahActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -79,7 +80,7 @@
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".Login.Activities.MainActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 
             <!--
             <intent-filter>

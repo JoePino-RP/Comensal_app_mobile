@@ -4,16 +4,22 @@ package com.caanvi.comensal_app_mobile.Login.Activities
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityFiltroBusquedaBinding
 import com.caanvi.comensal_app_mobile.databinding.BusquedaDialogBinding
+import www.sanju.customtabbar.Fragments.HomeFragment
 
 class FiltroBusqueda : AppCompatActivity() {
 
     private lateinit var binding: ActivityFiltroBusquedaBinding
 
+    val busquedaList = mutableListOf<String>()
+    var postres:String = ""
+    var carnes:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,9 +28,9 @@ class FiltroBusqueda : AppCompatActivity() {
         binding = ActivityFiltroBusquedaBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        busquedaList.add(postres)
+        busquedaList.add(carnes)
         alertDialog()
-
-
     }
 
 
@@ -53,21 +59,37 @@ class FiltroBusqueda : AppCompatActivity() {
             startActivity(intent)
         }
 
+        binding.checkBoxPostres.setOnCheckedChangeListener { buttonView, isChecked ->
+            if( binding.checkBoxPostres.isChecked){
+                busquedaList[0] = "Postres"
+                Toast.makeText(applicationContext, busquedaList.toString(), Toast.LENGTH_SHORT).show()
+            }
+            else{
+                busquedaList[0] = ""
+                Toast.makeText(applicationContext, busquedaList.toString(), Toast.LENGTH_SHORT).show()
+            }
+
+        }
+
+        binding.checkBoxCarnes.setOnCheckedChangeListener { buttonView, isChecked ->
+            if( binding.checkBoxCarnes.isChecked){
+                busquedaList[1] = "Carnes"
+                Toast.makeText(applicationContext, busquedaList.toString(), Toast.LENGTH_SHORT).show()
+            }
+            else{
+                busquedaList[1] = ""
+                Toast.makeText(applicationContext, busquedaList.toString(), Toast.LENGTH_SHORT).show()
+            }
+        }
 
         binding.imageViewClose.setOnClickListener(){
-            dialog.dismiss()
 
-            //Cambio de Pantalla
             val intent = Intent(applicationContext, PrincipalFragments::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
-        }
 
+        }
 
         ///////////////////////////////////////////////
     }
-
-
-
-
 }

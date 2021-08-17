@@ -6,7 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white"
     android:gravity="center">
-    <EditText
+
+    <androidx.appcompat.widget.SearchView
         android:id="@+id/txtBusqueda"
         android:layout_width="280dp"
         android:layout_height="49dp"
@@ -19,9 +20,7 @@
         android:hint="Search"
         android:paddingLeft="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </EditText>
+        app:layout_constraintTop_toTopOf="parent"></androidx.appcompat.widget.SearchView>
 
     <TextView
         android:id="@+id/textView4"

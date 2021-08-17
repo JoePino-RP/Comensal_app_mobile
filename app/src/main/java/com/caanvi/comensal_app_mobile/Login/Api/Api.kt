@@ -35,21 +35,65 @@ interface Api {
     ): Call<registro>
 
     //
-    @GET("Restaurante/consultarRestaurantes.php")
-    fun getRestaurant() : Call<RestaurantResponse>
+    @FormUrlEncoded
+    @POST("Restaurante/consultarRestaurantes.php")
+    fun getRestaurant(
+        @Field ("latitud") latitud:Double,
+        @Field ("longitud") longitud:Double,
+    ) : Call<RestaurantResponse>
 
     //
+    @FormUrlEncoded
+    @POST("Restaurante/keywordRestaurantes.php")
+    fun getRestaurantKeywrod(
+        @Field ("latitud") latitud:Double,
+        @Field ("longitud") longitud:Double,
+        @Field ("keyword") keyword:String,
+    ) : Call<RestaurantResponse>
+
+
+    //
+    @FormUrlEncoded
+    @POST("Restaurante/listKeywordRestaurantes.php")
+    fun searchFilterRestaurant(
+        @Field ("latitud") latitud:Double,
+        @Field ("longitud") longitud:Double,
+        @Field ("listKeywordCarnes") listKeywordCarnes:String,
+        @Field ("listKeywordVegetales") listKeywordVegetales:String,
+        @Field ("listKeywordPostres") listKeywordPostres:String,
+        @Field ("listKeywordTacos")  listKeywordTacos:String,
+        @Field ("listKeywordComidaMar")listKeywordComidaMar:String,
+        @Field ("listKeywordComidaRapida")listKeywordComidaRapida :String
+
+    ) : Call<RestaurantResponse>
+
     @FormUrlEncoded
     @POST("Restaurante/buscarRestaurantes.php")
     fun searchRestaurant(
         @Field ("name") name:String
     ) : Call<RestaurantResponse>
 
+    //
     @FormUrlEncoded
+    @POST("Favoritos/consultarFavoritos.php")
+    fun getFavorite(
+        @Field ("id_comensal") id_comensal:String
+    ) : Call<RestaurantResponse>
 
+    //
+    @FormUrlEncoded
+    @POST("Favoritos/agregarFavoritos.php")
+    fun addFavorite(
+        @Field ("id_comensal") id_comensal:String,
+        @Field ("id_restaurante") id_restaurante:String
+    ) : Call<FavoriteResponse>
+
+    //
+    @FormUrlEncoded
     @POST("Restaurante/consultarPlatos.php")
-
-    fun getPlatos(@Field ("rest") rest: String) : Call<PlatosResponse>
+    fun getPlatos(
+        @Field ("rest") rest: String
+    ) : Call<PlatosResponse>
 
 
     //
