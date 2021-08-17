@@ -18,7 +18,7 @@ import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetFavorites.FavoriteAd
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
 import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
 import com.caanvi.comensal_app_mobile.R
-import com.caanvi.comensal_app_mobile.databinding.ActivityPruebasTodoBinding
+import com.caanvi.comensal_app_mobile.databinding.ActivityReservaRestauranteBinding
 import com.caanvi.comensal_app_mobile.databinding.FragmentHomeBinding
 import com.caanvi.comensal_app_mobile.databinding.FragmentNotificationBinding
 import com.google.android.gms.location.LocationServices
@@ -61,7 +61,7 @@ class NotificationFragment : Fragment() {
                 startActivity(intent)
             }
             override fun onItemClick1(position: Int) {
-                val intent = Intent(requireActivity().applicationContext, ActivityPruebasTodoBinding::class.java)
+                val intent = Intent(requireActivity().applicationContext, ActivityReservaRestauranteBinding::class.java)
                 intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
                 startActivity(intent)
             }

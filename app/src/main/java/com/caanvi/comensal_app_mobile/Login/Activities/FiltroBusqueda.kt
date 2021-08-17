@@ -11,7 +11,7 @@ import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityFiltroBusquedaBinding
 import com.caanvi.comensal_app_mobile.databinding.BusquedaDialogBinding
-import www.sanju.customtabbar.Fragments.HomeFragment
+
 
 class FiltroBusqueda : AppCompatActivity() {
 

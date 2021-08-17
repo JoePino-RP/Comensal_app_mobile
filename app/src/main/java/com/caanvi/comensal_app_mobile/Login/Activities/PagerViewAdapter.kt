@@ -3,6 +3,7 @@ package com.caanvi.comensal_app_mobile.Login.Activities
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
+import com.caanvi.comensal_app_mobile.Login.fragments.HomeFragment
 import www.sanju.customtabbar.Fragments.*
 
 internal class PagerViewAdapter(fm: FragmentManager?) : FragmentPagerAdapter(fm!!) {
