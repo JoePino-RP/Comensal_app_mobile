@@ -1,26 +1,15 @@
 package www.sanju.customtabbar.Fragments
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
-import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
-import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Platos
-import com.caanvi.comensal_app_mobile.Login.Modals.PlatosResponse
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetPlatos.PlatosAdapter
 import com.caanvi.comensal_app_mobile.databinding.FragmentAddBinding
-
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 
 /**
@@ -52,11 +41,12 @@ class AddFragment : Fragment() {
         //////////////////////////////////////////
 
 
-        getPlatos("1") //restaurante.id//
-        initRecyclerPlatos()
+        //getPlatos("1") //restaurante.id//
+        //initRecyclerPlatos()
 
         return binding.root
     }
+    /*
 
     fun initRecyclerPlatos(){
         binding.recyclerRestaurant.layoutManager = LinearLayoutManager(requireActivity().applicationContext)
@@ -98,7 +88,7 @@ class AddFragment : Fragment() {
             })
     }
 
-
+*/
 
 
 }
