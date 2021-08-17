@@ -11,17 +11,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
 import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
+import com.caanvi.comensal_app_mobile.Login.Activities.ReservaRestaurante
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetFavorites.FavoriteAdapter
-import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
-import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
-import com.caanvi.comensal_app_mobile.R
-import com.caanvi.comensal_app_mobile.databinding.ActivityReservaRestauranteBinding
-import com.caanvi.comensal_app_mobile.databinding.FragmentHomeBinding
 import com.caanvi.comensal_app_mobile.databinding.FragmentNotificationBinding
-import com.google.android.gms.location.LocationServices
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -61,7 +56,7 @@ class NotificationFragment : Fragment() {
                 startActivity(intent)
             }
             override fun onItemClick1(position: Int) {
-                val intent = Intent(requireActivity().applicationContext, ActivityReservaRestauranteBinding::class.java)
+                val intent = Intent(requireActivity().applicationContext, ReservaRestaurante::class.java)
                 intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
                 startActivity(intent)
             }

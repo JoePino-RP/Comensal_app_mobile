@@ -12,7 +12,6 @@ import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetPlatos.PlatosAdapter
 import com.caanvi.comensal_app_mobile.databinding.ActivityReservaRestauranteBinding
 import com.squareup.picasso.Picasso
-
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -46,6 +45,7 @@ class ReservaRestaurante : AppCompatActivity() {
         Picasso.get().load(restaurante.imagen_res).into(binding.mViewPager)
 
         getPlatos(restaurante.id_res) //restaurante.id//
+        //Toast.makeText(applicationContext, restaurante.id_res, Toast.LENGTH_LONG).show()
         initRecyclerPlatos()
 
 

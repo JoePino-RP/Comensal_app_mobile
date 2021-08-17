@@ -20,13 +20,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
 import com.caanvi.comensal_app_mobile.Login.Activities.MapsActivity
 import com.caanvi.comensal_app_mobile.Login.Activities.MenuActi
+import com.caanvi.comensal_app_mobile.Login.Activities.ReservaRestaurante
 import com.caanvi.comensal_app_mobile.Login.Api.RetrofitClient
 import com.caanvi.comensal_app_mobile.Login.Modals.FavoriteResponse
 import com.caanvi.comensal_app_mobile.Login.Modals.Restaurant
 import com.caanvi.comensal_app_mobile.Login.Modals.RestaurantResponse
 import com.caanvi.comensal_app_mobile.Login.RecyclerView.GetRestaurant.RestaurantAdapter
 import com.caanvi.comensal_app_mobile.R
-import com.caanvi.comensal_app_mobile.databinding.ActivityReservaRestauranteBinding
 import com.caanvi.comensal_app_mobile.databinding.BusquedaDialogBinding
 import com.caanvi.comensal_app_mobile.databinding.FragmentHomeBinding
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -234,16 +234,16 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
                 startActivity(intent)
             }
             override fun onItemClick1(position: Int) {
-                val intent = Intent(requireActivity().applicationContext, ActivityReservaRestauranteBinding::class.java)
+                val intent = Intent(requireActivity().applicationContext, ReservaRestaurante::class.java)
                 intent.putExtra(EXTRA_RESTAURANTLIST, restaurantList[position])
                 startActivity(intent)
             }
             override fun onItemStar(position: Int) {
-            addFavorites("1", restaurantList[position].id_res);
+                addFavorites("1", restaurantList[position].id_res);
             }
-    })
-    binding.recyclerRestaurant.adapter = adapter
-}
+        })
+        binding.recyclerRestaurant.adapter = adapter
+    }
 
     fun getRestaurant(latitude:Double, longitude:Double){
         RetrofitClient.instance.getRestaurant(latitude, longitude)
@@ -319,15 +319,15 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
                         restaurantList.addAll(addRestaurant)
                         adapter.notifyDataSetChanged()
 
-                        }else
-                        {
+                    }else
+                    {
 
-                            //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-                            Toast.makeText(requireActivity().applicationContext, "NO hay restaurantes", Toast.LENGTH_LONG).show()
-                        }
+                        //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireActivity().applicationContext, "NO hay restaurantes", Toast.LENGTH_LONG).show()
                     }
-                })
-            }
+                }
+            })
+    }
 
 
     fun addFavorites(idComensal:String , idRestaurante:String){
@@ -341,7 +341,7 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
                         Toast.makeText(requireActivity().applicationContext, "Añadido a Favoritos", Toast.LENGTH_SHORT).show()
                     }else{
                         //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
-                            Toast.makeText(requireActivity().applicationContext, "Algo salió mal", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(requireActivity().applicationContext, "Algo salió mal", Toast.LENGTH_SHORT).show()
                     }
                 }
             })
@@ -425,7 +425,7 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
             dialog.dismiss()
             startAll3( busquedaList)
         }
-    ///////////////////////////////////////////////
+        ///////////////////////////////////////////////
     }
     fun emptyAll(){
         carnes = "empty"
