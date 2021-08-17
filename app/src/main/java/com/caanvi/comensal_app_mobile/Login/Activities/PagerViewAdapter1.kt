@@ -1,0 +1,40 @@
+package com.caanvi.comensal_app_mobile.Login.Activities
+
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import www.sanju.customtabbar.Fragments.*
+
+internal class PagerViewAdapter1(fm: FragmentManager?) : FragmentPagerAdapter(fm!!) {
+    override fun getItem(position: Int): Fragment {
+        return when (position) {
+            0 -> {
+                HomeFragment()
+            }
+            1 -> {
+                //3SearchFragment()
+                NotificationFragment()
+            }
+            2 -> {
+                //4AddFragment()
+                SearchFragment()
+            }
+            3 -> {
+                //2NotificationFragment()
+                AddFragment()
+            }
+            4 -> {
+                ProfileFragment()
+            }
+            else -> //HomeFragment()
+                     AddFragment()
+        }
+    }
+
+    override fun getCount(): Int {
+
+        return 5
+    }
+
+}
+

@@ -8,7 +8,7 @@ import com.caanvi.comensal_app_mobile.R
 import com.caanvi.comensal_app_mobile.databinding.ActivityPrincipalFragmentsBinding
 
 
-class PrincipalFragments : AppCompatActivity() {
+class PrincipalFragments1 : AppCompatActivity() {
 
     private lateinit var homeBtn: ImageButton
     private lateinit var addBtn: ImageButton

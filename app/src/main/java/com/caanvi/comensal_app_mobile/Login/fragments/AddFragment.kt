@@ -52,8 +52,8 @@ class AddFragment : Fragment() {
         //////////////////////////////////////////
 
 
-        //getPlatos("1") //restaurante.id//
-        //initRecyclerPlatos()
+        getPlatos("1") //restaurante.id//
+        initRecyclerPlatos()
 
         return binding.root
     }
