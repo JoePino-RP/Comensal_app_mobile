@@ -22,8 +22,8 @@ class ProfileFragment : Fragment() {
     private  var _binding : FragmentProfileBinding? = null
     private val binding get()= _binding!!
     /////////////////////////////////////////
-
     lateinit var handler: DatabaseHelper
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -52,7 +52,7 @@ class ProfileFragment : Fragment() {
         super.onStart()
         if(usuarioData.idGeneral != "")
         {
-            binding.logout.text = usuarioData.emailGeneral
+            binding.txtEmailUsuario.text = usuarioData.emailGeneral
         }
     }
 

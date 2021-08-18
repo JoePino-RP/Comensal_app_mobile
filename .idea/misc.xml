@@ -19,11 +19,14 @@
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable-v24/ic_search_pink.xml" value="0.1125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable-v24/reservado.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable-v24/sign.xml" value="0.2203125" />
+        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/bg_bottom.xml" value="0.2203125" />
+        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/bg_top.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/bottom_bar_shape.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/check_inborder.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/filtro.xml" value="0.1125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_advertencia.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_aplaudir.xml" value="0.2203125" />
+        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_baseline_phone_24.xml" value="0.2203125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.1125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_buscar_2095.xml" value="0.1125" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/drawable/ic_calendario.xml" value="0.2203125" />
@@ -67,14 +70,14 @@
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_home.xml" value="0.24246395806028834" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_login.xml" value="0.17889492753623187" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_notification.xml" value="0.1" />
-        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_search.xml" value="0.22" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragment_settings.xml" value="0.17889492753623187" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/fragments_iniciarsesion_dialog.xml" value="0.33" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/places.xml" value="0.10833333333333334" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/platos.xml" value="0.33537519142419603" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/prefab_restaurant.xml" value="0.33" />
-        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/pruebas.xml" value="0.1" />
+        <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/pruebas.xml" value="0.40925925925925927" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/layout/registro_dialog.xml" value="0.4092920353982301" />
         <entry key="..\:/Users/Joel Rammstein/Videos/Comensal_app_mobile/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
       </map>

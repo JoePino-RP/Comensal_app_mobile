@@ -10,6 +10,11 @@
     <color name="gold">#FFB300</color>
     <color name="transparent_color">#80000000</color>
 
+    <color name="colorPrimary">#FF9301</color>
+    <color name="colorPrimaryDark">#FF3E2D</color>
+    <color name="colorSecondary">#E75370</color>
+    <color name="colorSecondaryDark">#C35CEF</color>
+
     // light colors
     //four bg card color
 
