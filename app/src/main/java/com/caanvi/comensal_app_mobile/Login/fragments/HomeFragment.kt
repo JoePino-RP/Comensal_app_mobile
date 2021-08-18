@@ -86,6 +86,11 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
             alertDialog ()
         }
 
+        //Ver todos
+        binding.textView6.setOnClickListener(){
+            startAll()
+        }
+
         busquedaList.add(carnes)
         busquedaList.add(vegetales)
         busquedaList.add(postres)
