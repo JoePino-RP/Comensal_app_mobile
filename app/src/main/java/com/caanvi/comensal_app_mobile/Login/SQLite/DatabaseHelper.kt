@@ -44,9 +44,9 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname, factor
             while(cursor.moveToNext()){
                 usuarioData.idGeneral = cursor.getString(0)
                 usuarioData.emailGeneral = cursor.getString(1)
-                usuarioData.nombreGeneral = cursor.getString(2)
-                usuarioData.apellidoGeneral = cursor.getString(3)
-                usuarioData.contactoGeneral = cursor.getString(4)
+                //usuarioData.nombreGeneral = cursor.getString(2)
+                //usuarioData.apellidoGeneral = cursor.getString(3)
+                //usuarioData.contactoGeneral = cursor.getString(4)
             }
 
             cursor.close()
@@ -69,9 +69,9 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname, factor
 
         values.put("id", id)
         values.put("email", email)
-        values.put("nombre", nombre)
-        values.put("apellido", apellido)
-        values.put("contacto", contacto)
+        //values.put("nombre", nombre)
+        //values.put("apellido", apellido)
+        //values.put("contacto", contacto)
 
         db.insert("user", null, values)
         db.close()
