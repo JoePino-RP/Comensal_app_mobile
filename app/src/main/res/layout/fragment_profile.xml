@@ -19,13 +19,13 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginTop="40dp"
-            android:src="@drawable/example_img"/>
+            android:src="@drawable/profile"/>
 
         <TextView
             android:id="@+id/txtNombreUsuario"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nombre"
+            android:text="Joel"
             android:layout_marginTop="10dp"
             style="@style/TextName"/>
 
@@ -97,7 +97,7 @@
                     android:id="@+id/txtApellidoUsuario"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Nombre y apellido"
+                    android:text="Joel"
                     style="@style/TextDescription"/>
 
             </LinearLayout>

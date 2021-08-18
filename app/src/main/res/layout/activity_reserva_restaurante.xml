@@ -118,7 +118,7 @@
     <Button
         android:id="@+id/BtnReserva"
         android:layout_width="wrap_content"
-        android:layout_height="35dp"
+        android:layout_height="wrap_content"
         android:layout_above="@+id/lin"
         android:layout_below="@+id/recyclerRestaurant"
         android:layout_alignParentStart="true"
@@ -193,7 +193,7 @@
         android:layout_marginEnd="18dp"
         android:layout_marginBottom="608dp"
         android:fontFamily="@font/avenir35light"
-        android:text="Descripcion Restaurante"
+        android:text=""
         android:textColor="#ffff" />
 
 

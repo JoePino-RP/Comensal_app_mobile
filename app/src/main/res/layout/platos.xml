@@ -50,8 +50,8 @@
             android:id="@+id/txtNombrePlato"
             android:layout_width="159dp"
             android:layout_height="31dp"
-
-            android:layout_marginTop="4dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/avenir35light"
             android:text="3/4 Res"
             android:textColor="#FF2929"
@@ -63,13 +63,13 @@
 
         <TextView
             android:id="@+id/txtDescripcionPlato"
-            android:layout_width="167dp"
+            android:layout_width="161dp"
             android:layout_height="107dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="4dp"
+            android:fontFamily="@font/avenir35light"
             android:text="Descripcion Plato"
             android:textColor="#000000"
-            android:fontFamily="@font/avenir35light"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/view"
