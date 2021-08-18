@@ -43,7 +43,7 @@ class NotificationFragment : Fragment() {
         //getFavorites(usuarioData.idGeneral)
         if(usuarioData.idGeneral != "")
         {
-            getFavorites("1")
+            getFavorites(usuarioData.idGeneral)
             initRecyclerRestaurant()
         }
 
