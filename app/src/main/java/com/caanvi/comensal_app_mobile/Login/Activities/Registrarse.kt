@@ -100,9 +100,14 @@ class Registrarse : AppCompatActivity() {
                     if(response.body()?.conecto!!){
                         usuarioData.idGeneral = response.body()?.user?.id!!
                         usuarioData.emailGeneral = response.body()?.user?.email!!
+                        usuarioData.nombreGeneral = response.body()?.user?.nombre!!
+                        usuarioData.apellidoGeneral = response.body()?.user?.apellido!!
+                        usuarioData.contactoGeneral = response.body()?.user?.contacto!!
 
                         //SQLite lo recordamos
-                        insertarSQLite(usuarioData.idGeneral , usuarioData.emailGeneral)
+                        insertarSQLite(usuarioData.idGeneral ,usuarioData.emailGeneral,
+                            usuarioData.nombreGeneral, usuarioData.apellidoGeneral,
+                            usuarioData.contactoGeneral)
 
                         //Muestra Alert Dialog de confirmacion de Registro
                         alertDialog()
@@ -129,8 +134,11 @@ class Registrarse : AppCompatActivity() {
 
 
     //Sqlite recordar usuario
-    fun insertarSQLite(id:String, email: String){
-        handler.insertDB(id, email)
+    fun insertarSQLite(id:String, email: String,
+                       nombre: String,
+                       apellido: String,
+                       contacto: String){
+        handler.insertDB(id, email, nombre, apellido, contacto)
     }
 
 

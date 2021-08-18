@@ -5,8 +5,6 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.service.autofill.UserData
-import com.caanvi.comensal_app_mobile.Login.Modals.User
 import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
 
 
@@ -22,7 +20,9 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname, factor
     override fun onCreate(db: SQLiteDatabase) {
         db?.execSQL("CREATE TABLE user (id VARCHAR PRIMARY KEY," +
                 "email VARCHAR," +
-                "password VARCHAR)")
+                "nombre VARCHAR,"+
+                "apellido VARCHAR,"+
+                "contacto VARCHAR")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
@@ -44,6 +44,9 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname, factor
             while(cursor.moveToNext()){
                 usuarioData.idGeneral = cursor.getString(0)
                 usuarioData.emailGeneral = cursor.getString(1)
+                usuarioData.nombreGeneral = cursor.getString(2)
+                usuarioData.apellidoGeneral = cursor.getString(3)
+                usuarioData.contactoGeneral = cursor.getString(4)
             }
 
             cursor.close()
@@ -56,12 +59,19 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname, factor
         }
     }
 
-    fun insertDB (id:String, email:String){
+    fun insertDB (id:String,
+                  email:String,
+                  nombre:String,
+                  apellido:String,
+                  contacto:String){
         val db : SQLiteDatabase = writableDatabase
         val values: ContentValues = ContentValues()
 
         values.put("id", id)
         values.put("email", email)
+        values.put("nombre", nombre)
+        values.put("apellido", apellido)
+        values.put("contacto", contacto)
 
         db.insert("user", null, values)
         db.close()

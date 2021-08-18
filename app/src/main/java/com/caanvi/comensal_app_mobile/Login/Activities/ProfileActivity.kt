@@ -3,7 +3,6 @@ package com.caanvi.comensal_app_mobile.Login.Activities
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.caanvi.comensal_app_mobile.Login.Modals.User
 import com.caanvi.comensal_app_mobile.Login.SQLite.DatabaseHelper
 import com.caanvi.comensal_app_mobile.Login.Storage.usuarioData
 import com.caanvi.comensal_app_mobile.databinding.ActivityProfileBinding
@@ -33,6 +32,7 @@ class ProfileActivity : AppCompatActivity() {
    override fun onStart() {
        super.onStart()
        binding.nombreTxt.text = usuarioData.emailGeneral
+
    }
 
    fun eliminarSQLite(id:String){

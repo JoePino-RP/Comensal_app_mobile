@@ -53,12 +53,19 @@ class ProfileFragment : Fragment() {
         if(usuarioData.idGeneral != "")
         {
             binding.txtEmailUsuario.text = usuarioData.emailGeneral
+            binding.txtNombreUsuario.text = usuarioData.nombreGeneral
+            binding.txtApellidoUsuario.text = usuarioData.nombreGeneral
+            binding.txtTelefonoUsuario.text = usuarioData.contactoGeneral
+
         }
     }
 
     fun eliminarSQLite(id:String){
         handler.deleteDB(id)
         usuarioData.idGeneral = ""
+        usuarioData.nombreGeneral = ""
+        usuarioData.apellidoGeneral = ""
+        usuarioData.contactoGeneral = ""
         val intent = Intent(requireActivity().applicationContext, MainActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         startActivity(intent)
