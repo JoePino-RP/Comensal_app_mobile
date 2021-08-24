@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.widget.SearchView
 import androidx.core.app.ActivityCompat
+import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.caanvi.comensal_app_mobile.Login.Activities.EXTRA_RESTAURANTLIST
@@ -272,6 +273,9 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
 
                         //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
                         Toast.makeText(requireActivity().applicationContext, "NO hay restaurantes", Toast.LENGTH_LONG).show()
+                        binding.imgRestaurant.isVisible = true
+
+
                     }
                 }
             })
@@ -300,6 +304,7 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
 
                         //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
                         Toast.makeText(requireActivity().applicationContext, "NO hay restaurantes", Toast.LENGTH_LONG).show()
+                        binding.imgRestaurant.isVisible = true
                     }
                 }
             })
@@ -329,6 +334,7 @@ class HomeFragment : Fragment(), SearchView.OnQueryTextListener {
 
                         //Toast.makeText(applicationContext, response.body()?.message, Toast.LENGTH_LONG).show()
                         Toast.makeText(requireActivity().applicationContext, "NO hay restaurantes", Toast.LENGTH_LONG).show()
+                        binding.imgRestaurant.isVisible = true
                     }
                 }
             })
