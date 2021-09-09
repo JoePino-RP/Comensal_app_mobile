@@ -23,7 +23,7 @@
         <activity android:name=".Login.Activities.popUpProperties"></activity>
         <activity
             android:name=".Login.Activities.ReservaRestaurante"
-            android:exported="true" />
+            android:exported="true"/>
         <activity
             android:name=".Login.Activities.FiltroBusqueda"
             android:exported="true" />

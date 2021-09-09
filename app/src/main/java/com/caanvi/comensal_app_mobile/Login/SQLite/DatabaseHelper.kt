@@ -22,7 +22,7 @@ class DatabaseHelper (context: Context):SQLiteOpenHelper(context, dbname, factor
                 "email VARCHAR," +
                 "nombre VARCHAR,"+
                 "apellido VARCHAR,"+
-                "contacto VARCHAR")
+                "contacto VARCHAR)")
     }
 
     override fun onUpgrade(db: SQLiteDatabase, oldVersion: Int, newVersion: Int) {
